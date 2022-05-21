@@ -29,9 +29,11 @@ import AuthLayout from "./layouts/Auth.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+      <Route path="/admin" render={(props) => {
+        return localStorage.getItem('accessToken') ? <AdminLayout {...props} /> : <Redirect to="/login" />
+      }} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Redirect from="/" to="/admin/index" />
+      <Redirect from="/" to="/auth/login" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

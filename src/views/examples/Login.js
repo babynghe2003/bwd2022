@@ -31,8 +31,29 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import users from "../../datas/users";
+import {useState} from "react"
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  let history = useHistory();
+
+  const checkLogin = () => {
+    let user = users.find(user => user.email === email && user.password === password);
+    if(user){
+      localStorage.setItem('accessToken',user.email);
+      console.log(user.email);
+      history = history.replace("/admin");
+    }else{
+      setError("Email or password is incorrect");
+    }
+  }
+
   return (
     <>
       <Col lg="5" md="7">
@@ -79,9 +100,6 @@ const Login = () => {
             </div>
           </CardHeader>
           <CardBody className="px-lg-5 py-lg-5">
-            <div className="text-center text-muted mb-4">
-              <small>Or sign in with credentials</small>
-            </div>
             <Form role="form">
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
@@ -94,6 +112,8 @@ const Login = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    value={email}
+                    onChange={e=> setEmail(e.target.value)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -108,6 +128,8 @@ const Login = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    value={password}
+                    onChange={e=> setPassword(e.target.value)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -124,8 +146,9 @@ const Login = () => {
                   <span className="text-muted">Remember me</span>
                 </label>
               </div>
+              <span className="btn-inner--text">{error}</span>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button">
+                <Button className="my-4" color="primary" type="button" onClick={checkLogin}>
                   Sign in
                 </Button>
               </div>

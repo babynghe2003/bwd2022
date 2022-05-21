@@ -36,13 +36,7 @@ var routes = [
     component: TagsPage,
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Documentation",
-    icon: "ni ni-books text-orange",
-    component: null,
-    layout: "/admin",
-  },
+
   {
     path: "/user-profile",
     name: "User Profile",

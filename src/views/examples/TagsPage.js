@@ -32,6 +32,8 @@ import {
 import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 
+import {Link} from "react-router-dom";
+
 const TagsPage = () => {
   const [copiedText, setCopiedText] = useState();
   const questionsTags = [];
@@ -46,15 +48,17 @@ const TagsPage = () => {
     return tags.map((tag, index) => {
       return (
         <Col lg="3" md="6" key={index}>
-                      <button
-                        className="btn-icon-clipboard"
-                        id="tooltip982655500"
-                        type="button"
-                      >
-                        <div>
-                          <span>#{tag}</span>
-                        </div>
-                      </button>
+                     
+                          <Link to={'/admin/index?tags='+tag}> <button
+                            className="btn-icon-clipboard"
+                            id="tooltip982655500"
+                            type="button"
+                          >
+                            <div>
+                              <span>#{tag}</span> </div>
+                          </button>
+                          </Link>
+                       
             </Col>
       );
     });

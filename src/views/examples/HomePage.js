@@ -39,13 +39,19 @@ import {
 import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
+import {useLocation } from "react-router-dom";
 
-const HomePage = () => {
+const HomePage = (props) => {
+  const location = useLocation();
   const getUserName = (userID) => {
     const user = users.find((user) => user.id === userID);
-    console.log(user.username)
     return user.username;
   }
+  const userCurrent = users.find(user => user.id == new URLSearchParams(location.search).get('id'));
+  const tagCurrent = new URLSearchParams(location.search).get('tags');
+  console.log(userCurrent);
+  console.log(tagCurrent);
+
   const getTagsName = (question) => {
     return question.tags.map((tag, index) => {
       return (
@@ -56,7 +62,9 @@ const HomePage = () => {
     })
   }
   const getQuestion = (questions) => {
+
     return questions.map((question, index) => {
+      if (userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))
       return (
         <tr key={index}>
                     <th scope="row">
@@ -114,6 +122,7 @@ const HomePage = () => {
                     </td>
                   </tr>
       );
+      else return null;
     });
   }
   return (

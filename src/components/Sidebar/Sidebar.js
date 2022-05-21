@@ -17,7 +17,7 @@
 */
 /*eslint-disable*/
 import { useState } from "react";
-import { NavLink as NavLinkRRD, Link } from "react-router-dom";
+import { NavLink as NavLinkRRD, Link ,useHistory } from "react-router-dom";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
 
@@ -71,6 +71,7 @@ const Sidebar = (props) => {
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
+
       return (
         <NavItem key={key}>
           <NavLink
@@ -86,6 +87,12 @@ const Sidebar = (props) => {
       );
     });
   };
+  //logout
+  let history = useHistory();
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    history.replace('/login');
+  }
 
   const { bgColor, routes, logo } = props;
   let navbarBrandProps;
@@ -178,7 +185,7 @@ const Sidebar = (props) => {
                 <span>Support</span>
               </DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+              <DropdownItem href="#pablo" onClick={logout}>
                 <i className="ni ni-user-run" />
                 <span>Logout</span>
               </DropdownItem>
