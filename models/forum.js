@@ -3,43 +3,25 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const ForumSchema = new Schema({
-  forum_title: {
-    type: String,
-    required: true,
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
-  forum_description: {
-    type: String,
-    required: true,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
+  vote: { type: Number, default: 0 },
   replies: [
     {
       type: Schema.Types.ObjectId,
       ref: "ReplyToForum",
     },
   ],
-  user: {
-    id: { type: String },
-    name: { type: String },
-    picture: { type: String },
-  },
-  likes: {
-    type: Number,
-    default: 0,
-  },
-  dislikes: {
-    type: Number,
-    default: 0,
-  },
-  likedUsers: [String],
-  dislikedUsers: [String],
+  categorys: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+    },
+  ],
 });
 
 const Forum = mongoose.model("Forum", ForumSchema);

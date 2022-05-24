@@ -1,5 +1,16 @@
 import axios from "axios";
-
+function getToken(){
+  let cookie = document.cookie;
+  let output = {};
+  cookie.split(/\s*;\s*/).forEach(function(pair) {
+    pair = pair.split(/\s*=\s*/);
+    output[pair[0]] = pair.splice(1).join('=');
+  });
+  if(output["token"]){
+    return output["token"];
+  }
+  return "";
+}
 export default {
   // Create forum
   createForum: async function (forum) {

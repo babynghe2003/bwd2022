@@ -1,30 +1,32 @@
 const Forum = require("../models/forum");
+const User = require("../models/user");
 // const { db } = require("../models/forum");
 
 module.exports = {
   create: (req, res) => {
-    const forum = new Forum(req.body);
-    Forum.create(forum)
-      .then((createdForum) => {
-        res.json(createdForum);
-      })
-      .catch((err) => {
-        res.json(err);
+    User.findById(req.user.user_id).
+    then((user) => {
+      Forum.create({
+        title: req.body.title,
+        description: req.body.description,
+        author: user
+      }).then((forum) => {
+        res.json(forum);
       });
+    }).
+    catch((err) => {
+      res.status(422).json(err);
+    });
   },
-  findAll: (req, res) => {
-    let { sortBy, sortOrder } = req.query;
-    if (!sortBy) {
-      sortBy = "date";
-    }
-    if (!sortOrder) {
-      sortOrder = "desc";
-    }
-    const sortObj = {};
-    sortObj[sortBy] = sortOrder;
-
+  findAll: (req, res) => {    
     Forum.find({})
-      .sort(sortObj)
+      .sort({date:"desc"})
+      .then((dbForums) => res.json(dbForums))
+      .catch((err) => res.status(422).json(err));
+  },
+  findByCategory: (req, res) => {
+    Forum.find({categorys: {name: req.params.category}})
+      .sort({date:"desc"})
       .then((dbForums) => res.json(dbForums))
       .catch((err) => res.status(422).json(err));
   },
@@ -34,18 +36,28 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   deleteById: (req, res) => {
-    Forum.findByIdAndDelete(req.params.forumId)
-      .then((dbForum) => res.json(dbForum))
+    Forum.findById(req.params.forumId)
+      .then((dbForum) => {
+        if (dbForum.author == req.user.user_id) {
+          dbForum.remove();
+          res.json(dbForum);
+        } else {
+          res.status(422).json({ error: "You can't delete this" });
+        }
+      })
       .catch((err) => res.status(422).json(err));
   },
   updateById: async (req, res) => {
-    // BV: Above is the hackey way to check if a user has already clicked a like/dislike button. Below is the better way but it's not quite right. Any help would be appreciated if anyone has the time.
-
-    // Forum.findByIdAndUpdate({ $and: [{ _id: req.params.forumId }, { votingUsers: { "$ne": req.params.forumId } }] }, req.body)
-    const updateForum = await Forum.findByIdAndUpdate(
-      req.params.forumId,
-      req.body
-    );
-    res.json(updateForum);
+    Forum.findById(req.params.forumId)
+      .then((dbForum) => {
+        if (dbForum.author == req.user.user_id) {
+          dbForum.title = req.body.title;
+          dbForum.description = req.body.description;
+          dbForum.save();
+          res.json(dbForum);
+        } else {
+          res.status(422).json({ error: "You can't update this" });
+        }
+      }).catch((err) => res.status(422).json(err));    
   },
 };

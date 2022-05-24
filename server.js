@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-const connection = `mongodb+srv://${process.env.ATLAS_USER}:${process.env.ATLAS_PASS}@cluster0.rmtku.mongodb.net/Open_Forums?authSource=admin&retryWrites=true&w=majority`;
+const connection = `mongodb://localhost:27017/bwd2022`;
 mongoose
   .connect(connection, {
     useNewUrlParser: true,

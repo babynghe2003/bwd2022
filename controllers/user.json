@@ -1,0 +1,32 @@
+{
+    "_id" : "",
+    "username" : "",
+    "password" : "",
+    "token" : "",
+    "birth" : "",
+    "city" : "",
+    "phone" : "",
+    "role" : "",
+    "about" : ""
+}
+{
+    "_id" : "",
+    "name" : "healthy",
+    "description" : "",
+}
+{
+    "_id" : "",
+    "author" : "",
+    "description" : "",
+    "forum" : "",
+    "vote" : "",
+}
+{
+    "_id": "",
+    "title" : "",
+    "description" : "",
+    "author" : "",
+    "vote" : 0,
+    "replies" : ["r_id1", "r_id2"],
+    "categorys" : ["c_id1", "c_id2"],
+}
