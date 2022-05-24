@@ -30,10 +30,11 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={(props) => {
-        return localStorage.getItem('accessToken') ? <AdminLayout {...props} /> : <Redirect to="/login" />
+        return localStorage.getItem('accessToken') ? <AdminLayout {...props} /> : <Redirect  to={'/auth/login'} />
       }} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Redirect from="/" to="/auth/login" />
+      <Redirect from="*" to="/admin/index" />
+      
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

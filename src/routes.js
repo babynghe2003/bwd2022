@@ -20,6 +20,7 @@ import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import HomePage from "views/examples/HomePage.js";
 import TagsPage from "views/examples/TagsPage.js";
+import QuestionPage from "views/examples/QuestionPage.js";
 
 var routes = [
   {
@@ -57,6 +58,13 @@ var routes = [
     icon: "ni ni-circle-08 text-pink",
     component: Register,
     layout: "/auth",
+  },
+  {
+    path: "/question",
+    name: "question",
+    icon: "ni ni-circle-08 text-pink",
+    component: QuestionPage,
+    layout: "/admin",
   },
 ];
 export default routes;

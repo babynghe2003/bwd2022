@@ -39,7 +39,7 @@ import {
 import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
-import {useLocation } from "react-router-dom";
+import {useLocation, Link } from "react-router-dom";
 
 const HomePage = (props) => {
   const location = useLocation();
@@ -55,9 +55,9 @@ const HomePage = (props) => {
   const getTagsName = (question) => {
     return question.tags.map((tag, index) => {
       return (
-        <Badge color="primary" pill key={index}>
+        <Link to={'/admin/index?tags='+tag} key={index} className="ml-1"><Badge color="primary" pill key={index}>
           #{tag}
-        </Badge>
+        </Badge></Link>
       )
     })
   }
@@ -71,19 +71,32 @@ const HomePage = (props) => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
+                          <Link to={`/admin/question?questionID=${question.id}`}>
                             {question.title}
+                          </Link>
                           </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>{question.vote}</td>
+                    <td>
+    
+                        {question.vote > 1?
+                          <i className="fas fa-arrow-up text-success mr-3" />:
+                        <i className="fas fa-arrow-down text-danger mr-3" />}
+
+                      {question.vote>0?<span>+</span>:<span></span>}
+                      {question.vote}
+                    </td>
                     <td>
                       <Badge color="" className="badge-dot mr-4">
+                        {question.answers.length > 0 ? 
+                          <i className="bg-success" /> :
+                          <i className="bg-warning" />}
                         {question.answers.length}
                       </Badge>
                     </td>
                     <td>
-                      <div className="avatar-group">
+                      <div className="avatar-group">@
                         {getUserName(question.userID)}
                       </div>
                     </td>

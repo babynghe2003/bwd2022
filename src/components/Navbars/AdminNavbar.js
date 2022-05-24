@@ -34,6 +34,8 @@ import {
   Media,
 } from "reactstrap";
 
+import users from "../../datas/users"
+
 const AdminNavbar = (props) => {
 
   let history = useHistory();
@@ -41,6 +43,9 @@ const AdminNavbar = (props) => {
     localStorage.removeItem('accessToken');
     history.replace('/login');
   }
+
+  const userCurrent = users.find(user => user.email === localStorage.getItem('accessToken'));
+  
 
   return (
     <>
@@ -79,7 +84,7 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      Jessica Jones
+                      @{userCurrent.username}
                     </span>
                   </Media>
                 </Media>

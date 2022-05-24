@@ -10345,7 +10345,12 @@ a.text-secondary:hover, a.text-secondary:focus {
 
 a.text-success:hover, a.text-success:focus {
   color: #1f8f5f !important; }
-
+.text-user-info {
+  color: #11cdef !important; 
+}
+a.text-user-info:hover{
+  color: #1171ef !important; 
+}
 .text-info {
   color: #f95979 !important; }
 
@@ -11468,6 +11473,11 @@ a.text-yellow:hover, a.text-yellow:focus {
 
 a.text-green:hover, a.text-green:focus {
   color: #1f8f5f !important; }
+
+.text-user-info {
+  color: #11cdef !important; }
+a.text-user-info:hover{
+  color: #1171ef !important; }
 
 .text-teal {
   color: #f95979 !important; }

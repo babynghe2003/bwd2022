@@ -53,7 +53,7 @@ const Profile = () => {
   }
   return (
     <>
-      <UserHeader />
+      <UserHeader username={userCurrent.username}/>
       {/* Page content */}
       <Container className="mt--7" fluid>
         <Row>

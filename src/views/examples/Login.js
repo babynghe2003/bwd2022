@@ -48,7 +48,7 @@ const Login = () => {
     if(user){
       localStorage.setItem('accessToken',user.email);
       console.log(user.email);
-      history = history.replace("/admin");
+      history = history.replace("/admin/index");
     }else{
       setError("Email or password is incorrect");
     }
