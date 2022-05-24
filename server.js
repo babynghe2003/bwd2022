@@ -3,6 +3,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cors = require("cors")
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -15,11 +16,11 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.use(cors())
 // Add routes, both API and view
 app.use(routes);
 
-const connection = `mongodb+srv://${process.env.ATLAS_USER}:${process.env.ATLAS_PASS}@cluster0.rmtku.mongodb.net/Open_Forums?authSource=admin&retryWrites=true&w=majority`;
+const connection = `mongodb+srv://lethanhdat:0388121738@bigproject.6rkws.mongodb.net/?retryWrites=true&w=majority`;
 mongoose
   .connect(connection, {
     useNewUrlParser: true,

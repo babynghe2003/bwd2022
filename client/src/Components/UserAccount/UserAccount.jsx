@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ImageAvatars() {
   const classes = useStyles();
-  const { user, logout } = useAuth0();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -31,9 +30,9 @@ export default function ImageAvatars() {
     setAnchorEl(null);
   };
 
-  const handleLogout = () => {
-    logout();
-  };
+  // const handleLogout = () => {
+  //   logout();
+  // };
 
   const handleMyForum = () => {
     setAnchorEl(null);
@@ -46,10 +45,9 @@ export default function ImageAvatars() {
       <div>
         <Avatar
           alt=""
-          src={user.picture}
           aria-controls="menu-appbar"
           aria-haspopup="true"
-          onClick={handleMenu}
+          // onClick={handleMenu}
         />
         <Menu
           id="menu-appbar"
@@ -64,10 +62,10 @@ export default function ImageAvatars() {
             horizontal: "right",
           }}
           open={open}
-          onClose={handleClose}
+          // onClose={handleClose}
         >
-          <MenuItem onClick={handleMyForum}>My Forum</MenuItem>
-          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          {/* <MenuItem onClick={handleMyForum}>My Forum</MenuItem>
+          <MenuItem onClick={handleLogout}>Logout</MenuItem> */}
         </Menu>
       </div>
     </div>

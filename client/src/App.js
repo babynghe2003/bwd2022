@@ -13,6 +13,8 @@ import darkTheme from "./Themes/darkTheme";
 import { useDarkModeContext } from "./contexts/DarkModeContext";
 import lightTheme from "./Themes/lightTheme";
 import { ViewportContextProvider } from "./contexts/ViewportContext";
+import Signin from './Components/SignInPage/Signin'
+import SignUp from './Components/SignUpPage/SignUp'
 
 function App() {
   const { isLoading } = useAuth0();
@@ -30,6 +32,8 @@ function App() {
             <Switch>
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/my_forum" component={MyForum} />
+              <Route path="/signin" component={Signin}/>
+              <Route path="/signup" component={SignUp}/>
               <Route path="/forums/:forumId" component={Forum} />
             </Switch>
           </ThemeProvider>
