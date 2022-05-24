@@ -2,8 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <font id="hermes-dashboard-icons" horiz-adv-x="256">
-    <font-face font-family="hermes-dashboard-icons"
+  <font id="hermes-forum-icons" horiz-adv-x="256">
+    <font-face font-family="hermes-forum-icons"
       units-per-em="256" ascent="256"
       descent="0" />
     <missing-glyph horiz-adv-x="0" />

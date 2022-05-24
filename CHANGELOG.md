@@ -1,18 +1,3 @@
-## [1.2.1] 2021-07-13
-
-### Bug fixing
-
-### Major style changes
-
-### Deleted components
-
-### Added components
-
-### Deleted dependencies
-
-### Added dependencies
-
-### Updated dependencies
 
 ```
 @fortawesome/fontawesome-free   5.15.2   →   5.15.3
@@ -47,14 +32,14 @@ _In development mode, some of the above plugins will throw a warning because the
 
 ### Bug fixing
 
-- https://github.com/creativetimofficial/argon-dashboard-react/pull/38
-- https://github.com/creativetimofficial/argon-dashboard-react/pull/33
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/29
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/23
+- https://github.com/creativetimofficial/WTF-Forum/pull/38
+- https://github.com/creativetimofficial/WTF-Forum/pull/33
+- https://github.com/creativetimofficial/WTF-Forum/issues/29
+- https://github.com/creativetimofficial/WTF-Forum/issues/23
 
 ### Major style changes
 
-- Moved all `src/scss/argon-dashboard/bootstrap` files to `node_modules/bootstrap`
+- Moved all `src/scss/argon-forum/bootstrap` files to `node_modules/bootstrap`
 
 ### Deleted components
 
@@ -111,11 +96,11 @@ _In development mode, some of the above plugins will throw a warning because the
 
 ### Bug fixing
 
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/18 (Added this in live docs, we need for our product to have a homepage prop inside the package.json. If build is not working, just delete the homepage prop from inside the package.json, or configure it to your own specs.)
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/17
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/15
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/12
-- https://github.com/creativetimofficial/argon-dashboard-react/issues/3
+- https://github.com/creativetimofficial/WTF-Forum/issues/18 (Added this in live docs, we need for our product to have a homepage prop inside the package.json. If build is not working, just delete the homepage prop from inside the package.json, or configure it to your own specs.)
+- https://github.com/creativetimofficial/WTF-Forum/issues/17
+- https://github.com/creativetimofficial/WTF-Forum/issues/15
+- https://github.com/creativetimofficial/WTF-Forum/issues/12
+- https://github.com/creativetimofficial/WTF-Forum/issues/3
 - Changed `componentWillMount` with `constructor` function inside `src/views/Index.js` (this was for initializing the charts)
 
 ### Major style changes
@@ -179,4 +164,4 @@ Please update the following components: withScriptjs(withGoogleMap(Component))
 ### Original Release
 
 - Added Reactstrap as base framework
-- Added design from Argon Dashboard by Create by WTF
+- Added design from Argon Forum by Create by WTF
