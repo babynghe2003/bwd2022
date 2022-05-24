@@ -47,7 +47,7 @@ const Login = () => {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    href="https://github.com/creativetimofficial/WTF-forum/blob/master/LICENSE.md?ref=adr-auth-footer"
+                    href="https://github.com/creativetimofficial/WTF-dashboard/blob/master/LICENSE.md?ref=adr-auth-footer"
                     target="_blank"
                   >
                     MIT License

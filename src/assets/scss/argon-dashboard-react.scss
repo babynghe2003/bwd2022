@@ -1,26 +1,8 @@
-/*!
 
-=========================================================
-* WTF Forum React - v1.2.1
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/WTF-Forum
-* Copyright 2021 Create by WTF (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/WTF-Forum/blob/master/LICENSE.md)
-
-* Coded by Create by WTF
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-// Core
-
-@import "WTF-forum/custom/functions";
-@import "WTF-forum/custom/variables";
-@import "WTF-forum/custom/mixins";
+@import "argon-dashboard/custom/functions";
+@import "argon-dashboard/custom/variables";
+@import "argon-dashboard/custom/mixins";
 
 // bootstrap (4.6.0) components
 
@@ -57,26 +39,26 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
-// WTF utilities and components
+// Argon utilities and components
 
-@import "WTF-forum/custom/reboot";
-@import "WTF-forum/custom/utilities";
-@import "WTF-forum/custom/components";
+@import "argon-dashboard/custom/reboot";
+@import "argon-dashboard/custom/utilities";
+@import "argon-dashboard/custom/components";
 
 // Vendor (Plugins)
 
-@import "WTF-forum/custom/vendors";
+@import "argon-dashboard/custom/vendors";
 
 // Docs components
 
-@import "WTF-forum/docs/variables";
-@import "WTF-forum/docs/nav";
-@import "WTF-forum/docs/clipboard-js";
-@import "WTF-forum/docs/component-examples";
-@import "WTF-forum/docs/prism";
-@import "WTF-forum/docs/content";
-@import "WTF-forum/docs/sidebar";
-@import "WTF-forum/docs/footer";
+@import "argon-dashboard/docs/variables";
+@import "argon-dashboard/docs/nav";
+@import "argon-dashboard/docs/clipboard-js";
+@import "argon-dashboard/docs/component-examples";
+@import "argon-dashboard/docs/prism";
+@import "argon-dashboard/docs/content";
+@import "argon-dashboard/docs/sidebar";
+@import "argon-dashboard/docs/footer";
 
 // React Differences
 @import "react/react-differences";

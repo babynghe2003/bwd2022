@@ -1,7 +1,7 @@
 {
   "name": "WTF-Forum",
   "version": "1.2.1",
-  "description": "React version of WTF Forum by Create by WTF",
+  "description": "React version of WTF Dashboard by Create by WTF",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,9 +12,9 @@
     "reactjs",
     "WTF",
     "WTF-react",
-    "forum",
-    "forum-react",
-    "WTF-forum",
+    "dashboard",
+    "dashboard-react",
+    "WTF-dashboard",
     "WTF-Forum"
   ],
   "author": "Create by WTF",

@@ -39,7 +39,7 @@ _In development mode, some of the above plugins will throw a warning because the
 
 ### Major style changes
 
-- Moved all `src/scss/argon-forum/bootstrap` files to `node_modules/bootstrap`
+- Moved all `src/scss/argon-dashboard/bootstrap` files to `node_modules/bootstrap`
 
 ### Deleted components
 
@@ -164,4 +164,4 @@ Please update the following components: withScriptjs(withGoogleMap(Component))
 ### Original Release
 
 - Added Reactstrap as base framework
-- Added design from Argon Forum by Create by WTF
+- Added design from Argon Dashboard by Create by WTF

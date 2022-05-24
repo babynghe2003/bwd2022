@@ -37,7 +37,7 @@ const AdminNavbar = () => {
                     <img
                       alt="..."
                       src={
-                        require("../../assets/img/brand/WTF-react.png")
+                        require("../../assets/img/brand/argon-react.png")
                           .default
                       }
                     />
