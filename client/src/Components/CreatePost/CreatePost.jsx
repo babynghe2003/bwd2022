@@ -6,13 +6,12 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
 import SubmitPost from "../SubmitPost/SubmitPost";
-import { useAuth0 } from "@auth0/auth0-react";
+import auth from '../../auth/auth-helper'
 import AlertDialog from "../AuthenticationModal/AuthenticationModal";
 import { useSubmitPostModalContext } from "../../contexts/SubmitPostModalContext";
 
 function CreatePost() {
   const { showSubmitPostModal, setShowSubmitPostModal } = useSubmitPostModalContext();
-  const { isAuthenticated } = useAuth0();
 
   const handleClickOpen = () => {
     setShowSubmitPostModal(true);
@@ -24,7 +23,7 @@ function CreatePost() {
 
   return (
     <>
-      {(isAuthenticated && (
+      {(auth.isAuthenticated() && (
         // variant and color aren't doing anything... wtf...
         <Button variant="contained" color="secondary" onClick={handleClickOpen}>
           <BorderColorIcon />

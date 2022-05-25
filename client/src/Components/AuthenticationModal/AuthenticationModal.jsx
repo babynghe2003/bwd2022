@@ -7,11 +7,11 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { useAuth0 } from "@auth0/auth0-react";
+import auth from '../../auth/auth-helper'
+import { Redirect } from "react-router-dom";
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);
-  const { loginWithRedirect, Login } = useAuth0();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,7 +22,7 @@ export default function AlertDialog() {
   };
 
   const handleLogin = () => {
-    Login();
+    Redirect('/signin')
   };
 
   return (
@@ -40,7 +40,7 @@ export default function AlertDialog() {
             onClick={handleLogin}
             color="primary"
             // eslint-disable-next-line react/jsx-no-duplicate-props
-            onClick={() => loginWithRedirect()}
+            onClick={() => console.log("lack")}
           >
             Log in
           </Button>

@@ -1,12 +1,12 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import auth from '../../auth/auth-helper'
+import { Redirect } from 'react-router-dom';
 import { Button } from "@material-ui/core";
 
 const Logout = () => {
-  const { logout, isAuthenticated } = useAuth0();
   return (
-    isAuthenticated && (
-      <Button color="inherit" onClick={() => logout()}>
+    auth.isAuthenticated() && ( 
+      <Button color="inherit" onClick={() => history.push('/')}>
         Log Out
       </Button>
     )

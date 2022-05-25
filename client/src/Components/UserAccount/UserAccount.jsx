@@ -2,7 +2,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import { useAuth0 } from "@auth0/auth0-react";
+import auth from '../../auth/auth-helper'
 import { Menu, MenuItem } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 
@@ -30,9 +30,9 @@ export default function ImageAvatars() {
     setAnchorEl(null);
   };
 
-  // const handleLogout = () => {
-  //   logout();
-  // };
+  const handleLogout = () => {
+    auth.signout()
+  };
 
   const handleMyForum = () => {
     setAnchorEl(null);
@@ -47,7 +47,7 @@ export default function ImageAvatars() {
           alt=""
           aria-controls="menu-appbar"
           aria-haspopup="true"
-          // onClick={handleMenu}
+          onClick={handleMenu}
         />
         <Menu
           id="menu-appbar"
@@ -62,10 +62,10 @@ export default function ImageAvatars() {
             horizontal: "right",
           }}
           open={open}
-          // onClose={handleClose}
+          onClose={handleClose}
         >
-          {/* <MenuItem onClick={handleMyForum}>My Forum</MenuItem>
-          <MenuItem onClick={handleLogout}>Logout</MenuItem> */}
+          <MenuItem onClick={handleMyForum}>My Forum</MenuItem>
+          <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Menu>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Tooltip, Grid, AppBar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+import auth from '../../auth/auth-helper'
 import { useDarkModeContext } from "../../contexts/DarkModeContext";
 import Login from "../Login/Login";
 import UserAccount from "../UserAccount/UserAccount";
@@ -21,7 +21,6 @@ const useStyles = makeStyles({
 });
 
 function NavBar(props) {
-  const { isAuthenticated } = useAuth0();
   const { darkMode, setDarkMode } = useDarkModeContext();
   const classes = useStyles();
   const { width } = useViewportContext();
@@ -54,7 +53,7 @@ function NavBar(props) {
                   <Tooltip title="Toggle light/dark theme" placement="bottom">
                     {darkMode ? <Brightness7 onClick={handleThemeChange} /> : <Brightness4 onClick={handleThemeChange} />}
                   </Tooltip>
-                  <Button color="inherit">{isAuthenticated ? <UserAccount /> : <Login />}</Button>
+                  <Button color="inherit">{auth ? <UserAccount /> : <Login />}</Button>
                 </Grid>
               </Grid>
             </Grid>
@@ -84,7 +83,7 @@ function NavBar(props) {
               <Tooltip title="Toggle light/dark theme" placement="bottom">
                 {darkMode ? <Brightness7 onClick={handleThemeChange} /> : <Brightness4 onClick={handleThemeChange} />}
               </Tooltip>
-              <Button color="inherit">{isAuthenticated ? <UserAccount /> : <Login />}</Button>
+              <Button color="inherit">{auth.isAuthenticated() ? <UserAccount /> : <Login />}</Button>
             </Grid>
           </Grid>
         </Grid>

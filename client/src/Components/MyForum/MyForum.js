@@ -10,6 +10,7 @@ function MyForum() {
       <Grid item xs={12} sm={12} md={12} lg={12} id="nav-bar">
         <NavBar isSearchEnable={false} />
       </Grid>
+      <div>hello</div>
       <Grid item xs={12} sm={12} md={12} lg={12}>
         <Grid container direction="row" justify="center" alignItems="flex-start">
           <Grid item xs={12} sm={12} md={8} lg={8}>
