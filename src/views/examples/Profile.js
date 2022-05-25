@@ -212,7 +212,8 @@ const Profile = () => {
                             className="form-control-alternative"
                             id="input-postal-code"
                             placeholder={userCurrent.phone}
-                            type="number"
+                            type="text"
+
                           />
                         </FormGroup>
                       </Col>
