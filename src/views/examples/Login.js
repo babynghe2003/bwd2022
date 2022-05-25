@@ -29,7 +29,6 @@ const Login = () => {
     let user = users.find(user => user.email === email && user.password === password);
     if(user){
       localStorage.setItem('accessToken',user.email);
-      console.log(user.email);
       history = history.replace("/admin/index");
     }else{
       setError("Email or password is incorrect");

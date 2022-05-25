@@ -23,8 +23,19 @@ import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
 import {useLocation, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const HomePage = (props) => {
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(8);
+  const maxPage = Math.ceil(questions.length / pageSize);
+  const lsPage = Array.from({length: maxPage}, (_, i) => i + 1)
+
+  const handlerChangePage = (event,page) => {
+    if (page >= 1 && page <= maxPage) 
+    setPage(page);
+  }
+
   const location = useLocation();
   const getUserName = (userID) => {
     const user = users.find((user) => user.id === userID);
@@ -47,7 +58,7 @@ const HomePage = (props) => {
   const getQuestion = (questions) => {
 
     return questions.map((question, index) => {
-      if (userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))
+      if ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))&& (index >= (page-1)*pageSize && index < page*pageSize))
       return (
         <tr key={index}>
                     <th scope="row">
@@ -154,44 +165,36 @@ const HomePage = (props) => {
                     className="pagination justify-content-end mb-0"
                     listClassName="justify-content-end mb-0"
                   >
-                    <PaginationItem className="disabled">
+                    <PaginationItem className={page==1 ? "disabled":''}>
                       <PaginationLink
                         href="#pablo"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) =>  handlerChangePage(e,page-1)}
                         tabIndex="-1"
                       >
                         <i className="fas fa-angle-left" />
                         <span className="sr-only">Previous</span>
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className="active">
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        1
-                      </PaginationLink>
-                    </PaginationItem>
+
+                    {lsPage.map((pa, index) => {
+                        return (
+                          <PaginationItem className={pa === page ? "active" : ""}>
+                            <PaginationLink
+                              href="#pablo"
+                              onClick={(e) => handlerChangePage(e,pa)}
+                            >
+                              {pa}
+                            </PaginationLink>
+                          </PaginationItem>
+                        )
+                    })
+                    }
+                    
+                    
                     <PaginationItem>
-                      <PaginationLink
+                      <PaginationLink className={page===maxPage ? "disabled":''}
                         href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        2 <span className="sr-only">(current)</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        3
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) =>  handlerChangePage(e,page+1)}
                       >
                         <i className="fas fa-angle-right" />
                         <span className="sr-only">Next</span>

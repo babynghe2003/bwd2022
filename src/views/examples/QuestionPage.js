@@ -30,7 +30,6 @@ const QuestionPage = () => {
     (question) =>
       question.id == new URLSearchParams(location.search).get("questionID")
   );
-  console.log(questionCr.answers);
   const getTagsName = (question) => {
     return question.tags.map((tag, index) => {
       return (
