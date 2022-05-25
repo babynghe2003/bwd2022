@@ -30,10 +30,19 @@ const HomePage = (props) => {
   const [pageSize, setPageSize] = useState(8);
   const maxPage = Math.ceil(questions.length / pageSize);
   const lsPage = Array.from({length: maxPage}, (_, i) => i + 1)
+  const [hide,setHide] = useState([])
 
   const handlerChangePage = (event,page) => {
     if (page >= 1 && page <= maxPage) 
     setPage(page);
+  }
+
+  const handlerHide = (id) => {
+    console.log(id);
+
+    setHide([...hide,id])
+    console.log(hide);
+
   }
 
   const location = useLocation();
@@ -58,7 +67,7 @@ const HomePage = (props) => {
   const getQuestion = (questions) => {
 
     return questions.map((question, index) => {
-      if ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))&& (index >= (page-1)*pageSize && index < page*pageSize))
+      if ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))&& (index >= (page-1)*pageSize && index < page*pageSize)&& !hide.includes(question.id)) 
       return (
         <tr key={index}>
                     <th scope="row">
@@ -120,7 +129,7 @@ const HomePage = (props) => {
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
-                            onClick={(e) => e.preventDefault()}
+                            onClick={(e) => handlerHide(question.id)}
                           >
                             Hide
                           </DropdownItem>
@@ -136,9 +145,11 @@ const HomePage = (props) => {
     <>
       <Header />
       {/* Page content */}
+      
       <Container className="mt--7" fluid>
-        {/* Table */}
+        <a className="btn btn-secondary my-3">Ask a question</a>
         <Row>
+        
           <div className="col">
             <Card className="shadow">
               <CardHeader className="border-0">
@@ -192,7 +203,7 @@ const HomePage = (props) => {
                     
                     
                     <PaginationItem>
-                      <PaginationLink className={page===maxPage ? "disabled":''}
+                      <PaginationLink className={page==maxPage ? "disabled":''}
                         href="#pablo"
                         onClick={(e) =>  handlerChangePage(e,page+1)}
                       >
