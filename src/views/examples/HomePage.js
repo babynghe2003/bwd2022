@@ -32,6 +32,11 @@ const HomePage = (props) => {
   }
   const userCurrent = users.find(user => user.id == new URLSearchParams(location.search).get('id'));
   const tagCurrent = new URLSearchParams(location.search).get('tags');
+  var pageCurrent = Number.parseInt(new URLSearchParams(location.search).get('page'));
+  if(pageCurrent == null) pageCurrent = 1;
+  const config = {
+    max : 5,    
+  };
   console.log(userCurrent);
   console.log(tagCurrent);
 
@@ -47,7 +52,7 @@ const HomePage = (props) => {
   const getQuestion = (questions) => {
 
     return questions.map((question, index) => {
-      if (userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))
+      if ( userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))
       return (
         <tr key={index}>
                     <th scope="row">
@@ -154,48 +159,21 @@ const HomePage = (props) => {
                     className="pagination justify-content-end mb-0"
                     listClassName="justify-content-end mb-0"
                   >
-                    <PaginationItem className="disabled">
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        tabIndex="-1"
-                      >
-                        <i className="fas fa-angle-left" />
-                        <span className="sr-only">Previous</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className="active">
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        1
-                      </PaginationLink>
+                    <PaginationItem>
+                      <Link to={`/admin/index?page=${pageCurrent > 1 ? pageCurrent-1 : pageCurrent}`}>
+                        <PaginationLink>
+                          <i className="fas fa-angle-left" />                          
+                          <span className="sr-only">Previous</span>                          
+                        </PaginationLink>
+                      </Link>
                     </PaginationItem>
                     <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        2 <span className="sr-only">(current)</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        3
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i className="fas fa-angle-right" />
-                        <span className="sr-only">Next</span>
-                      </PaginationLink>
+                      <Link to={`/admin/index?page=${pageCurrent < Math.ceil(questions.length / config.max) ? pageCurrent+1 : pageCurrent}`}>
+                        <PaginationLink>
+                          <i className="fas fa-angle-right" />                          
+                          <span className="sr-only">Next</span>                        
+                        </PaginationLink>
+                      </Link>
                     </PaginationItem>
                   </Pagination>
                 </nav>

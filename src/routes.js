@@ -5,7 +5,7 @@ import Login from "views/examples/Login.js";
 import HomePage from "views/examples/HomePage.js";
 import TagsPage from "views/examples/TagsPage.js";
 import QuestionPage from "views/examples/QuestionPage.js";
-
+import Post from "views/examples/Post.js";
 var routes = [
   {
     path: "/index",
@@ -48,6 +48,13 @@ var routes = [
     name: "question",
     icon: "ni ni-circle-08 text-pink",
     component: QuestionPage,
+    layout: "/admin",
+  },
+  {
+    path: "/post",
+    name: "post",
+    icon: "ni ni-circle-08 text-pink",
+    component: Post,
     layout: "/admin",
   },
 ];

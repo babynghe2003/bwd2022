@@ -3,18 +3,11 @@ import { useLocation, Link } from "react-router-dom";
 
 import {
   Badge,
-  Button,
   Card,
   CardHeader,
   CardBody,
-  NavItem,
-  NavLink,
-  Nav,
   FormGroup,
-  Form,
   Input,
-  Progress,
-  Table,
   Container,
   Row,
   Col,
@@ -28,7 +21,7 @@ const QuestionPage = () => {
   const location = useLocation();
   const questionCr = questions.find(
     (question) =>
-      question.id == new URLSearchParams(location.search).get("questionID")
+      question.id === new URLSearchParams(location.search).get("questionID")
   );
   console.log(questionCr.answers);
   const getTagsName = (question) => {
@@ -42,7 +35,7 @@ const QuestionPage = () => {
     });
   };
   const getUserName = (userID) => {
-    const user = users.find((user) => user.id == userID);
+    const user = users.find((user) => user.id === userID);
     return user.username;
   };
   return (

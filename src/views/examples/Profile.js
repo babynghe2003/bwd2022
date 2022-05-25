@@ -16,10 +16,9 @@ import UserHeader from "components/Headers/UserHeader.js";
 
 import users from "../../datas/users";
 import questions from "../../datas/questions";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const history = useHistory();
   const userCurrent = users.find(user => user.email === localStorage.getItem('accessToken'));
   const countQuestion = questions.filter(question => question.userID === userCurrent.id).length;
   var countAnswer = 0;
@@ -30,9 +29,6 @@ const Profile = () => {
       }
     })
   });
-  const showQuestion = () => {
-    history.replace("/admin/index/id="+userCurrent.id);
-  }
   return (
     <>
       <UserHeader username={userCurrent.username}/>
