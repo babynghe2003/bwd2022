@@ -6,11 +6,9 @@ import {
     CardHeader,
     CardBody,
     FormGroup,
-    Form,
     Input,
     Container,
     Row,
-    Col,
     Label,
   } from "reactstrap";
   import { useState } from "react";
@@ -18,7 +16,7 @@ import {
   import Header from "components/Headers/Header.js";
   import questions from "../../datas/questions.js";
   
-  import {Link} from "react-router-dom";
+  // import {Link} from "react-router-dom";
   
   const Post = () => {
     const [tags, setTags] = useState([]);
@@ -31,7 +29,7 @@ import {
       });
     })
     const handleAddTag = (tag) => {
-      if (tag != 'Select-tag' && tag != '')
+      if (tag !== 'Select-tag' && tag !== '')
             setTags([...tags, tag]);
     }
     const handleRemoveTag = (tag) => {

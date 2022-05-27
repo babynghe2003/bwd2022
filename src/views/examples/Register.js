@@ -13,8 +13,15 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import {useState} from "react";
 
 const Register = () => {
+  const [passlength, setPasslength] = useState(null);
+  const setPassword = (e) => {
+    if (e.length > 0) setPasslength(<span className="text-danger font-weight-700">weak</span>)
+    if (e.length > 5) setPasslength(<span className="text-warning font-weight-700">normal</span>)
+    if (e.length > 10) setPasslength(<span className="text-success font-weight-700">strong</span>)
+  }
   return (
     <>
       <Col lg="6" md="8">
@@ -100,13 +107,15 @@ const Register = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </InputGroup>
               </FormGroup>
               <div className="text-muted font-italic">
                 <small>
-                  password strength:{" "}
-                  <span className="text-success font-weight-700">strong</span>
+                  {passlength?'password strength: ':''}
+                  {passlength}
+                  
                 </small>
               </div>
               <Row className="my-4">

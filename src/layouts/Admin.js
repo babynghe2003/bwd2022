@@ -1,15 +1,18 @@
 
 import React from "react";
-import { useLocation, Route, Switch, Redirect } from "react-router-dom";
+import { useLocation, Route, Switch } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
-import {useState} from 'react';
 // core components
 import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import AdminFooter from "../components/Footers/AdminFooter.js";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 
 import routes from "../routes.js";
+
+//data source
+import questions from "../datas/questions";
+import users from "../datas/users.js";
 
 const Admin = (props) => {
   const mainContent = React.useRef(null);
@@ -28,7 +31,7 @@ const Admin = (props) => {
         return (
           <Route
           path={prop.layout + prop.path}
-          render={(props) => (<prop.component user={null} />)}
+          render={(props) => (<prop.component users={users} />)}
           key={key}
         />
         );
@@ -36,7 +39,7 @@ const Admin = (props) => {
         return (
           <Route
             path={prop.layout + prop.path}
-            component={prop.component}
+            render={(props) => (<prop.component questions={questions} users={users}/>)}
             key={key}
           />
         );
@@ -73,6 +76,7 @@ const Admin = (props) => {
         <AdminNavbar
           {...props}
           brandText={getBrandText(props.location.pathname)}
+          users={users}
         />
         <Switch>
           {getRoutes(routes)}

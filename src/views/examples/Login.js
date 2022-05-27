@@ -15,7 +15,6 @@ import {
 } from "reactstrap";
 import users from "../../datas/users";
 import {useState} from "react"
-import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {

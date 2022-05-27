@@ -1,8 +1,4 @@
 
-import { useState } from "react";
-// react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
-// reactstrap components
 import {
   Card,
   CardHeader,
@@ -10,7 +6,6 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
@@ -19,7 +14,6 @@ import questions from "../../datas/questions.js";
 import {Link} from "react-router-dom";
 
 const TagsPage = () => {
-  const [copiedText, setCopiedText] = useState();
   const questionsTags = [];
   questions.forEach((question) => {
     question.tags.forEach((tag) => {
