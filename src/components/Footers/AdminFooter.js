@@ -1,5 +1,5 @@
 
-import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import {  Row, Col } from "reactstrap";
 
 const Footer = () => {
   return (
@@ -10,9 +10,7 @@ const Footer = () => {
             © {new Date().getFullYear()}{" "}
             <a
               className="font-weight-bold ml-1"
-              // href="https://www.creative-tim.com?ref=adr-admin-footer"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/#"
             >
               Creative By WTF
             </a>

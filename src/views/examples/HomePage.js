@@ -16,20 +16,19 @@ import {
   Table,
   Container,
   Row,
-  UncontrolledTooltip,
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
 import {useLocation, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 const HomePage = (props) => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(8);
-  const maxPage = Math.ceil(questions.length / pageSize);
-  const lsPage = Array.from({length: maxPage}, (_, i) => i + 1)
+  const [maxPage,setMaxPageSize] = useState(Math.ceil(questions.length / pageSize));
+  const [lsPage,setLsPageSize] = useState(Array.from({length: maxPage}, (_, i) => i + 1));
   const [hide,setHide] = useState([])
 
   const handlerChangePage = (event,page) => {
@@ -66,8 +65,9 @@ const HomePage = (props) => {
   }
   const getQuestion = (questions) => {
 
-    return questions.map((question, index) => {
-      if ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ==tagCurrent) || (!userCurrent && !tagCurrent))&& (index >= (page-1)*pageSize && index < page*pageSize)&& !hide.includes(question.id)) 
+    const questionTemp = questions.filter((question)=>((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag ===tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
+
+    return questionTemp.slice((page-1)*pageSize, page*pageSize).map((question, index) => {
       return (
         <tr key={index}>
                     <th scope="row">
@@ -83,7 +83,7 @@ const HomePage = (props) => {
                     </th>
                     <td>
     
-                        {question.vote > 1?
+                        {question.vote > 0?
                           <i className="fas fa-arrow-up text-success mr-3" />:
                         <i className="fas fa-arrow-down text-danger mr-3" />}
 
@@ -138,7 +138,7 @@ const HomePage = (props) => {
                     </td>
                   </tr>
       );
-      else return null;
+
     });
   }
   return (
@@ -147,7 +147,7 @@ const HomePage = (props) => {
       {/* Page content */}
       
       <Container className="mt--7" fluid>
-        <Link to="/admin/post"><a className="btn btn-secondary my-3">Ask a question</a></Link>
+        <Link to="/admin/post" className="btn btn-secondary my-3">Ask a question</Link>
         <Row>
           <div className="col">
             <Card className="shadow">
@@ -188,7 +188,7 @@ const HomePage = (props) => {
 
                     {lsPage.map((pa, index) => {
                         return (
-                          <PaginationItem className={pa === page ? "active" : ""}>
+                          <PaginationItem className={pa === page ? "active" : ""} key={index}>
                             <PaginationLink
                               href="#pablo"
                               onClick={(e) => handlerChangePage(e,pa)}
@@ -201,8 +201,8 @@ const HomePage = (props) => {
                     }
                     
                     
-                    <PaginationItem>
-                      <PaginationLink className={page==maxPage ? "disabled":''}
+                    <PaginationItem className={page==maxPage ? "disabled":''}>
+                      <PaginationLink 
                         href="#pablo"
                         onClick={(e) =>  handlerChangePage(e,page+1)}
                       >

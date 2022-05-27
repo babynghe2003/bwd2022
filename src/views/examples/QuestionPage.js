@@ -84,9 +84,9 @@ const QuestionPage = () => {
           {
             questionCr.answers.sort(order).map((answer, index) => {
             return (
-              <>
+               
+                <div className="mt-3 mb-5 mb-xl-0" key={index}> 
                 {index > 0 ? <hr className="my-1 mx-4" /> : null}
-                <div className="mt-3 mb-5 mb-xl-0">
                   <CardHeader className="border-0 form-inline">
                     <div className="btn-group-vertical align-items-center">
                       <i
@@ -109,7 +109,7 @@ const QuestionPage = () => {
                     </Row>
                   </CardBody>
                 </div>
-              </>
+
             );
           })}
         </Card>

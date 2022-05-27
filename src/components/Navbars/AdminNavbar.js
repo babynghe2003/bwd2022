@@ -18,7 +18,6 @@ import {
   Media,
 } from "reactstrap";
 
-import users from "../../datas/users"
 
 const AdminNavbar = (props) => {
 
@@ -28,7 +27,7 @@ const AdminNavbar = (props) => {
     history.replace('/login');
   }
 
-  const userCurrent = users.find(user => user.email === localStorage.getItem('accessToken'));
+  const userCurrent = props.users.find(user => user.email === localStorage.getItem('accessToken'));
   
 
   return (
