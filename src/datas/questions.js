@@ -24,17 +24,17 @@ var questions = [
     {
         id: 2,
         userID: 2,
-        title: 'Con trai tuổi dậy thì...',
-        description: 'Tôi có 2 con trai đang tuổi dậy thì ,thật khó khăn khi dạy cho chúng biết về giới tính .Xin giúp tôi với!',
+        title: 'Mộng tinh thường xuyên...',
+        description: 'Mình là T, 15 tuổi, dạo này sáng dậy là bị ướt đũng quần, tan suat kha cao,. mọi người ở đây có ai gặp trường hợp tương tự không ạ, và cách giải quyết như thế nào ?',
         vote: 10,
         answers: [
             {
-                userID: 2, content: 'đây là một lứa tuổi nhạy cảm, nên để ông bố nói ra thì hay hơn, nói thật khéo vào, mà để nói khoé thì phải hết sức để ý từng cái thay đổi nhỏ của cháu mà đặt vấn đề, như thế các cháu sẽ đỡ ngại và rụt rè khi chia sẽ vấn đề với bố',
+                userID: 2, content: 'Không sao đâu b, mộng tinh xảy ra rất bình thường với con trai tuổi dậy thì nhé!',
                 vote: 5
             },
             {
-                userID: 3, content: 'Nhà xuất bản Kim đồng mới xuất bản bộ 4 tập truyện tranh : "Thắc mắc của tuổi mới lớn về giới tính" đó. Bạn thử tham khảo xem, biết đâu con bạn cũng thích đọc truyện tranh nhỉ!',
-                vote: 8
+                userID: 3, content: 'Bệnh chắc cú rồi. Ko qwerty thì cũng phải qua khoảng thời gian khá lâu mới mộng tinh',
+                vote: -2
             },
         ],
         tags: ['boy']
