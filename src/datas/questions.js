@@ -60,7 +60,7 @@ var questions = [
         tags: ['age','boy']
     },
     {
-        id: 2,
+        id: 4,
         userID: 2,
         title: 'Mộng tinh thường xuyên...',
         description: 'Mình là T, 15 tuổi, dạo này sáng dậy là bị ướt đũng quần, tan suat kha cao,. mọi người ở đây có ai gặp trường hợp tương tự không ạ, và cách giải quyết như thế nào ?',
@@ -78,7 +78,7 @@ var questions = [
         tags: ['boy']
     },
     {
-        id: 3,
+        id: 5,
         userID: 2,
         title: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
         description: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
@@ -100,9 +100,7 @@ var questions = [
         tags: ['education','child']
     },
     {
-        tags: ['experience','lbgt','sex']
-    },{
-        id: 4,
+        id: 6,
         userID: 1,
         title: 'What are realistic and unrealistic standards for bodily appearance?',
         description: 'What are realistic and unrealistic standards for bodily appearance?',
@@ -127,7 +125,7 @@ var questions = [
         ],
         tags: ['appearance']
     },{
-        id: 5,
+        id: 7,
         userID: 1,
         title: 'What does transgender mean and how can I challenge transphobia?',
         description: 'What does transgender mean and how can I challenge transphobia?',
@@ -152,7 +150,7 @@ var questions = [
         ],
         tags: ['appearance','service']
     },{
-        id: 6,
+        id: 8,
         userID: 1,
         title: 'protecting against discrimination',
         description: 'What protection does the law offer in protecting against discrimination on the grounds of gender and sexual orientation?',
@@ -177,7 +175,7 @@ var questions = [
         ],
         tags: ['health','love','sex']
     },{
-        id: 7,
+        id: 9,
         userID: 1,
         title: 'Should we have sex and cohabitation before marriage? Why? Why not?',
         description: 'Should we have sex and cohabitation before marriage? Why? Why not?',
@@ -202,7 +200,7 @@ var questions = [
         ],
         tags: ['sex','marriage']
     },{
-        id: 8,
+        id: 10,
         userID: 1,
         title: 'difficult to talk about in intimate relationship',
         description: 'What issues can be difficult to talk about in intimate relationships for example sexual pleasure and contraception and how can this be addressed?',
