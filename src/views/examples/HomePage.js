@@ -147,9 +147,8 @@ const HomePage = (props) => {
       {/* Page content */}
       
       <Container className="mt--7" fluid>
-        <a className="btn btn-secondary my-3">Ask a question</a>
+        <Link to="/admin/post"><a className="btn btn-secondary my-3">Ask a question</a></Link>
         <Row>
-        
           <div className="col">
             <Card className="shadow">
               <CardHeader className="border-0">

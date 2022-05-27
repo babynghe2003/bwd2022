@@ -44,6 +44,9 @@ const QuestionPage = () => {
     const user = users.find((user) => user.id == userID);
     return user.username;
   };
+  function order(a, b) {
+    return a.vote > b.vote ? -1 : 1;
+}
   return (
     <>
       <Header />
@@ -78,7 +81,8 @@ const QuestionPage = () => {
 
         <Row className="mt-4"></Row>
         <Card className="shadow">
-          {questionCr.answers.map((answer, index) => {
+          {
+            questionCr.answers.sort(order).map((answer, index) => {
             return (
               <>
                 {index > 0 ? <hr className="my-1 mx-4" /> : null}

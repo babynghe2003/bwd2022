@@ -22,18 +22,17 @@ import {
   
   const Post = () => {
     const [tags, setTags] = useState([]);
-    const questionsTags = [];
+    const [questionsTags,setquesTags] = useState([]);
     questions.forEach((question) => {
       question.tags.forEach((tag) => {
         if (!questionsTags.includes(tag)) {
-          questionsTags.push(tag);
+          setquesTags([...questionsTags, tag]);
         }
       });
     })
     const handleAddTag = (tag) => {
-        if (!tags.includes(tag)) {
+      if (tag != 'Select-tag' && tag != '')
             setTags([...tags, tag]);
-        }
     }
     const handleRemoveTag = (tag) => {
         setTags(tags.filter((t) => t !== tag));
@@ -71,19 +70,20 @@ import {
                       />                        
                     </FormGroup>
                     <FormGroup className="col-12">
-                        <Input
-                            className="form-control-alternative"
-                            placeholder="Tags"
-                            type="select"
-                            onChange={(e) => handleAddTag(e.target.value)}
-                        >
-                        <option value="">Select a tag</option>
-                        {questionsTags.map((tag) => tags.includes(tag) ? "" : (
-                            <option key={tag} value={tag}>
-                            {tag}
-                            </option>
-                        ))}
-                        </Input>
+                        <select className="custom-select"
+                            
+                            onClick={(e) => handleAddTag(e.target.value)}
+                            defaultValue="Select-tag"
+                            >
+                            
+                            <option className="was-validated" value="Select-tag" hidden>Select a tag</option>
+                            {questionsTags.map((tag) => tags.includes(tag) ? "" : (
+                              <option className="custom-select" key={tag} value={tag}>
+                              {tag}
+                              </option>
+                             ))}
+                            
+                        </select>
                     </FormGroup>
                     <FormGroup className="col-12 border border-secondary">
                         {tags.map((tag) => (
