@@ -2,281 +2,89 @@ var questions = [
     {
         id: 1,
         userID: 1,
-        title: 'Cach de yeu nhieu nguoi cung luc',
-        description: 'Ok so I want when I click an image button it runs a function and check if the button image is lets say equal to img1',
-
-        vote: 1,
+        title: 'Nuôi dạy con tuổi dậy thì',
+        description: 'Con trai mình 10 tuổi, coi như ngấp nghé lứa tuổi dậy thì. Mình mở topic này muốn xin kinh nghiệm các mẹ về giai đoạn này: tuổi nào bắt đầu nhổ giò, quá trình lớn thế nào ? khi nào tính tình bắt đầu thay đổi ? Lời khuyên nên cho ăn uống thêm gì, bổ sung vitamin thuốc men ra sao để thúc cao lớn, cân đối giữa giờ học và tập tành thể thao ra sao? Và mọi câu chuyện hay ho về con của các bạn giai đoạn này ? Rất mong các mẹ vào bàn tán rôm rả !',
+        vote: 6,
         answers: [
             {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
+                userID: 2, content: 'con gái mới cần quan tâm đặc biết chứ con trai thì cứ để tự nhiên, chăm sóc dinh dưỡng cho cháu là được rồi',
                 vote: 5
             },
+            {
+                userID: 3, content: 'hihi, con trai dậy thì sau nhưng sức ép chiều cao lại lớn hơn nên mình muốn hỏi kinh nghiệm để tận dụng tốt nhất độ tuổi này cho chiều cao. Các mẹ có con gái cũng vào chia sẻ cho vui nhé. Nhiều thông tin có ích cho cả con trai và con gái mà.',
+                vote: 3
+            },
+            {
+                userID: 4, content: 'Em cũng đang nuôi con nhỏ, vào học hỏi kinh nghiệm các mẹ ạ',
+                vote: 3
+            },
         ],
-        tags: ['sex', 'couple']
+        tags: ['age','boy']
     },
     {
         id: 2,
         userID: 2,
-        title: 'Ga co truoc hay trung co truoc',
-        description: 'Ok so I want when I click an image button it runs a function and check if the button image is lets say equal to img1',
-
-        vote: 2,
-        answers: [
-            {
-                userID: 1, content: 'dddfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsssdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfssdffsddsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['abc', 'sex']
-    },
-    {
-        id: 3,
-        userID: 4,
-        title: 'Как правильно писать код в JavaScript?',
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-
-        vote: 3,
-        answers: [],
-        tags: ['abc', 'couple']
-
-    }, {
-        id: 4,
-        userID: 1,
-        title: 'Cach de yeu nhieu nguoi cung luc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 4,
-        answers: [
-            {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['sex', 'couple']
-    },
-    {
-        id: 5,
-        userID: 2,
-        title: 'Ga co truoc hay trung co truoc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 5,
-        answers: [
-            {
-                userID: 1, content: 'dddfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsssdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfssdffsddsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['abc', 'sex']
-    },
-    {
-        id: 6,
-        userID: 4,
-        title: 'Как правильно писать код в JavaScript?',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 6,
-        answers: [
-            {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'dfasdfasdfasdfasdfdf',
-                vote: -2
-            },
-            {
-                userID: 1, content: 'fsdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['abc', 'couple']
-
-    }, {
-        id: 7,
-        userID: 1,
-        title: 'Cach de yeu nhieu nguoi cung luc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 7,
-        answers: [
-            {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['sex', 'couple']
-    },
-    {
-        id: 8,
-        userID: 2,
-        title: 'Ga co truoc hay trung co truoc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 8,
-        answers: [
-            {
-                userID: 1, content: 'dddfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            }
-        ],
-        tags: ['abc', 'sex']
-    },
-    {
-        id: 9,
-        userID: 4,
-        title: 'Как правильно писать код в JavaScript?',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 9,
-        answers: [
-            {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'dfasdfasdfasdfasdfdf',
-                vote: -2
-            },
-            {
-                userID: 1, content: 'fsdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 5
-            },
-        ],
-        tags: ['abc', 'couple']
-
-    }, {
-        id: 10,
-        userID: 1,
-        title: 'Cach de yeu nhieu nguoi cung luc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
+        title: 'Con trai tuổi dậy thì...',
+        description: 'Tôi có 2 con trai đang tuổi dậy thì ,thật khó khăn khi dạy cho chúng biết về giới tính .Xin giúp tôi với!',
         vote: 10,
         answers: [
             {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
+                userID: 2, content: 'đây là một lứa tuổi nhạy cảm, nên để ông bố nói ra thì hay hơn, nói thật khéo vào, mà để nói khoé thì phải hết sức để ý từng cái thay đổi nhỏ của cháu mà đặt vấn đề, như thế các cháu sẽ đỡ ngại và rụt rè khi chia sẽ vấn đề với bố',
                 vote: 5
             },
+            {
+                userID: 3, content: 'Nhà xuất bản Kim đồng mới xuất bản bộ 4 tập truyện tranh : "Thắc mắc của tuổi mới lớn về giới tính" đó. Bạn thử tham khảo xem, biết đâu con bạn cũng thích đọc truyện tranh nhỉ!',
+                vote: 8
+            },
         ],
-        tags: ['sex', 'couple']
+        tags: ['boy']
     },
     {
-        id: 11,
+        id: 3,
         userID: 2,
-        title: 'Ga co truoc hay trung co truoc',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 11,
+        title: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
+        description: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
+        vote: 8,
         answers: [
             {
-                userID: 1, content: 'dddfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'asdfasdfsdfasdfsssdsdfasdfasdfss',
-                vote: -2
-            },
-            {
-                userID: 4, content: 'asdfasdfsdfasdfssdffsddsdfasdfasdfss',
+                userID: 2, content: 'mình nghĩ là khi bé học hết cấp 1',
                 vote: 5
             },
+            {
+                userID: 3, content: 'Nếu giáo dục giới tính cho con thì mình nghĩ khi con bắt đầu hiểu biết, mình nên chia sẻ thường xuyên với con, để con có thể hiểu được.',
+                vote: 8
+            },
+            {
+                userID: 4, content: 'Bây giờ đúng là mình luôn suy nghĩ không biết giáo dục giới tính như thế nào cho con là đúng',
+                vote: 0
+            },
         ],
-        tags: ['abc', 'sex']
+        tags: ['education','child']
     },
     {
-        id: 12,
-        userID: 4,
-        title: 'Как правильно писать код в JavaScript?',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 12,
+        id: 4,
+        userID: 2,
+        title: 'Giáo Dục Giới Tính Cho Trẻ',
+        description: `Xin giới thiệu các phụ huynh 1 số bài viết liên quan giáo dục giới tính cho con trẻ. Tại sao cần giáo dục giới tính từ nhỏ, như thế nào,... đều có trong bài viết.
+        https://www.facebook.com/notes/tran...y-education-jayneen-sanders/10153962900055939
+        https://www.facebook.com/tranthikimvan/posts/10206693796172694
+        https://www.facebook.com/tranthikimvan/posts/10207448064548932?pnref=story
+        
+        Thân.
+        Bs Trần Thị Kim Vân.`,
+        vote: 32,
         answers: [
             {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'dfasdfasdfasdfasdfdf',
-                vote: -2
-            },
-            {
-                userID: 1, content: 'fsdfasdfsdfasdfsdsdfasdfasdfss',
+                userID: 2, content: 'cảm ơn ạ, tài liệu rất bổ ích',
                 vote: 5
             },
-        ],
-        tags: ['abc', 'couple']
-
-    },{
-        id: 13,
-        userID: 4,
-        title: 'Как правильно писать код в JavaScript?13',
-
-        description: 'Right now the websocket endpoint looks like this, but at the moment, if you connect to, for example, ws://localhost:8000/ws/1, and then connect to ws://localhost:8000/ws/2, the second one will not respond.',
-        vote: 13,
-        answers: [
             {
-                userID: 2, content: 'asdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 2
-            },
-            {
-                userID: 3, content: 'dfasdfasdfasdfasdfdf',
-                vote: -2
-            },
-            {
-                userID: 1, content: 'fsdfasdfsdfasdfsdsdfasdfasdfss',
-                vote: 5
+                userID: 3, content: 'cảm ơn bác sĩ',
+                vote: 8
             },
         ],
-        tags: ['abc', 'couple']
+        tags: ['sex','education','document']
+    },
 
-    }
 ]
 export default questions
