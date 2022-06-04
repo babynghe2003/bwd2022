@@ -13,17 +13,23 @@ import routes from "../routes.js";
 //data source
 import questions from "../datas/questions";
 import users from "../datas/users.js";
+import Loading from "views/examples/Loading.js";
 
 const Admin = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
-
+  const [loading, setLoading] = React.useState(1);
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     mainContent.current.scrollTop = 0;
   }, [location]);
-
+  React.useEffect(() => {
+    setLoading(1);
+    setTimeout(() => {
+      setLoading(0);
+    }, 1000);
+  }, [location]);
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/admin") {
@@ -31,7 +37,7 @@ const Admin = (props) => {
         return (
           <Route
           path={prop.layout + prop.path}
-          render={(props) => (<prop.component users={users} />)}
+          render={(props) => (loading ? <Loading/> : <prop.component users={users} />)}
           key={key}
         />
         );
@@ -39,7 +45,7 @@ const Admin = (props) => {
         return (
           <Route
             path={prop.layout + prop.path}
-            render={(props) => (<prop.component questions={questions} users={users}/>)}
+            render={(props) => (loading ? <Loading/> : <prop.component questions={questions} users={users}/>)}
             key={key}
           />
         );
