@@ -50,50 +50,9 @@ var questions = [
         answers: [
              
         ],
-        tags: ['age','boy']
-    },
-    {
+        tags: ['experience','lbgt','sex']
+    },{
         id: 4,
-        userID: 2,
-        title: 'Mộng tinh thường xuyên...',
-        description: 'Mình là T, 15 tuổi, dạo này sáng dậy là bị ướt đũng quần, tan suat kha cao,. mọi người ở đây có ai gặp trường hợp tương tự không ạ, và cách giải quyết như thế nào ?',
-        vote: 10,
-        answers: [
-            {
-                userID: 2, content: 'Không sao đâu b, mộng tinh xảy ra rất bình thường với con trai tuổi dậy thì nhé!',
-                vote: 5
-            },
-            {
-                userID: 3, content: 'Bệnh chắc cú rồi. Ko qwerty thì cũng phải qua khoảng thời gian khá lâu mới mộng tinh',
-                vote: -2
-            },
-        ],
-        tags: ['boy']
-    },
-    {
-        id: 5,
-        userID: 2,
-        title: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
-        description: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
-        vote: -2,
-        answers: [
-            {
-                userID: 2, content: 'mình nghĩ là khi bé học hết cấp 1',
-                vote: 5
-            },
-            {
-                userID: 3, content: 'Nếu giáo dục giới tính cho con thì mình nghĩ khi con bắt đầu hiểu biết, mình nên chia sẻ thường xuyên với con, để con có thể hiểu được.',
-                vote: 8
-            },
-            {
-                userID: 4, content: 'Bây giờ đúng là mình luôn suy nghĩ không biết giáo dục giới tính như thế nào cho con là đúng',
-                vote: 0
-            },
-        ],
-        tags: ['education','child']
-    },
-    {
-        id: 6,
         userID: 1,
         title: 'What are realistic and unrealistic standards for bodily appearance?',
         description: 'What are realistic and unrealistic standards for bodily appearance?',
@@ -118,7 +77,7 @@ var questions = [
         ],
         tags: ['appearance']
     },{
-        id: 7,
+        id: 5,
         userID: 1,
         title: 'What does transgender mean and how can I challenge transphobia?',
         description: 'What does transgender mean and how can I challenge transphobia?',
@@ -143,7 +102,7 @@ var questions = [
         ],
         tags: ['appearance','service']
     },{
-        id: 8,
+        id: 6,
         userID: 1,
         title: 'protecting against discrimination',
         description: 'What protection does the law offer in protecting against discrimination on the grounds of gender and sexual orientation?',
@@ -168,7 +127,7 @@ var questions = [
         ],
         tags: ['health','love','sex']
     },{
-        id: 9,
+        id: 7,
         userID: 1,
         title: 'Should we have sex and cohabitation before marriage? Why? Why not?',
         description: 'Should we have sex and cohabitation before marriage? Why? Why not?',
@@ -183,7 +142,7 @@ var questions = [
                 vote: 3
             },            
             {
-                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                userID: 4, content: 'You caan find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
                 vote: 1
             },
             {
@@ -193,7 +152,7 @@ var questions = [
         ],
         tags: ['sex','marriage']
     },{
-        id: 10,
+        id: 8,
         userID: 1,
         title: 'difficult to talk about in intimate relationship',
         description: 'What issues can be difficult to talk about in intimate relationships for example sexual pleasure and contraception and how can this be addressed?',
