@@ -6,7 +6,15 @@ import HomePage from "views/examples/HomePage.js";
 import TagsPage from "views/examples/TagsPage.js";
 import QuestionPage from "views/examples/QuestionPage.js";
 import Post from "views/examples/Post";
+import StartedPage from "views/examples/StartedPage";
 var routes = [
+  {
+    path: "/home",
+    name: "Home",
+    icon: "ni ni-tv-2 text-primary",
+    component: StartedPage,
+    layout: "/admin"
+  },
   {
     path: "/index",
     name: "Questions",

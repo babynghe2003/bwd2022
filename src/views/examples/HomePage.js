@@ -16,6 +16,15 @@ import {
   Table,
   Container,
   Row,
+  Col,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  FormGroup,
+  Input,
+  CardBody,
+  Form
+
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
@@ -23,6 +32,7 @@ import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
 import {useLocation, Link } from "react-router-dom";
 import { useState} from "react";
+import posts from "../../datas/posts.js"; 
 
 const HomePage = (props) => {
   const [page, setPage] = useState(1);
@@ -73,7 +83,7 @@ const HomePage = (props) => {
                     <th scope="row">
                       <Media className="align-items-center">
                         <Media>
-                          <span className="mb-0 text-sm">
+                          <span className="mb-0 text-sm" style={{textOverflow: 'hidden'}}>
                           <Link to={`/admin/question?questionID=${question.id}`}>
                             {question.title}
                           </Link>
@@ -90,19 +100,7 @@ const HomePage = (props) => {
                       {question.vote>0?<span>+</span>:<span></span>}
                       {question.vote}
                     </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        {question.answers.length > 0 ? 
-                          <i className="bg-success" /> :
-                          <i className="bg-warning" />}
-                        {question.answers.length}
-                      </Badge>
-                    </td>
-                    <td>
-                      <div className="avatar-group">@
-                        {getUserName(question.userID)}
-                      </div>
-                    </td>
+                    
                     <td>
                       <div className="avatar-group">
                         {getTagsName(question)}
@@ -141,6 +139,50 @@ const HomePage = (props) => {
 
     });
   }
+  Date.prototype.yyyymmdd = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+  
+    return [this.getFullYear(),
+            (mm>9 ? '' : '0') + mm,
+            (dd>9 ? '' : '0') + dd
+           ].join('/');
+  };
+
+  const getPosts = (posts) => {
+    return posts.map((post, index) => {
+      return (
+        <div key={index}>
+            <div className="avatar float-left mr-1">
+            <img
+                        alt="..."
+                        className="rounded-circle"
+                        src={
+                          require("../../assets/img/theme/abc.webp")
+                            .default
+                        }
+                      />
+              
+            </div>
+            <div>
+              <span className="mb-0 text-sm" style={{fontWeight: 600}}>
+                <Link to={`/admin/post?postID=${post.id}`} >
+                  {post.title}
+                </Link>
+              </span>
+              
+              <p>
+                <span className="text-muted" style={{fontSize:'13px'}}>
+                  {post.createdAt.yyyymmdd()}
+                </span>
+              </p>
+            </div>
+            
+        </div>
+            
+      )
+        
+  })};
   return (
     <>
       <Header />
@@ -149,18 +191,16 @@ const HomePage = (props) => {
       <Container className="mt--7" fluid>
         <Link to="/admin/post" className="btn btn-secondary my-3">Ask a question</Link>
         <Row>
-          <div className="col">
+          <Col className="mb-5 mb-xl-0" xl='8'>
             <Card className="shadow">
               <CardHeader className="border-0">
-                <h3 className="mb-0">Card tables</h3>
+                <h3 className="mb-0">Top Questions</h3>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Questions</th>
                     <th scope="col">Vote</th>
-                    <th scope="col">Number of reply</th>
-                    <th scope="col">Author</th>
                     <th scope="col">Tags</th>
                     <th scope="col" />
                   </tr>
@@ -214,7 +254,37 @@ const HomePage = (props) => {
                 </nav>
               </CardFooter>
             </Card>
-          </div>
+          </Col>
+          <Col xl="4">
+            <Card className="shadow">
+              <CardHeader className="border-0">
+                <h3 className="mb-0">Search</h3>
+              </CardHeader>
+              <CardBody>
+                <Form role="search">
+                  <div className="input-group">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="fas fa-search" />
+                        </InputGroupText> 
+                      </InputGroupAddon>  
+                      <Input placeholder="Search" type="text" name="search" /> 
+                    </InputGroup> 
+                  </div>
+                </Form>
+              </CardBody>
+            </Card>
+            <Card className="shadow mt-4">
+              <CardHeader className="border-0">
+                <h3 className="mb-0">Lastest Post</h3>
+              </CardHeader>
+              <CardBody>
+                  {getPosts(posts)}
+              </CardBody>
+            </Card>
+
+          </Col>
         </Row>
         {/* Dark table */}
         

@@ -48,14 +48,7 @@ var questions = [
         description: 'What is the experience like of ‘coming out’ about being gay, lesbian or bisexual to family and friends?',
         vote: 6,
         answers: [
-            {
-                userID: 2, content: 'There are no universally correct ways to come out and every person will have a different experience.',
-                vote: 5
-            },
-            {
-                userID: 3, content: "Coming out is the process of revealing one's sexual orientation to others. The term coming out can refer to revealing one’s identity in a social climate that is unaccepting of LGBT people, or it can refer to the process of recognizing one’s own same-sex attractions.",
-                vote: 3
-            },    
+             
         ],
         tags: ['age','boy']
     },
@@ -82,7 +75,7 @@ var questions = [
         userID: 2,
         title: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
         description: 'Nên Giáo Dục Giới Tính Cho Con Từ Lúc Nào?',
-        vote: 8,
+        vote: -2,
         answers: [
             {
                 userID: 2, content: 'mình nghĩ là khi bé học hết cấp 1',
