@@ -28,7 +28,7 @@ const Admin = (props) => {
     setLoading(1);
     setTimeout(() => {
       setLoading(0);
-    }, 1000);
+    }, 500);
   }, [location]);
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {

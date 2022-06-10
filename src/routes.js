@@ -11,7 +11,7 @@ var routes = [
   {
     path: "/home",
     name: "Home",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "ni ni-planet text-indigo",
     component: StartedPage,
     layout: "/admin"
   },

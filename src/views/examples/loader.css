@@ -3,9 +3,9 @@
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid #f95979;
-    width: 120px;
-    height: 120px;
-    animation: spin 1s linear infinite;
+    width: 80px;
+    height: 80px;
+    animation: spin 0.75s linear infinite;
 }
 .loader::before{
     content: "";
@@ -13,8 +13,8 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    left: -1px;
-    top: 0px;
+    left: -6px;
+    top: -7px;
     background-color: #f95979;
   }
   .loader::after{
@@ -23,8 +23,8 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    right: -1px;
-    top: 0px;
+    right: -6px;
+    top: -7px;
     background-color: #f95979;
   }
 .load{
