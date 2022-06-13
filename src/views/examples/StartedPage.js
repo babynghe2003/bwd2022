@@ -5,7 +5,7 @@ const StartedPage = () => {
     <div className='startedPage'>
         <div className='header bg-gradient-info pb-8 pt-5 pt-md-8'>
 
-        </div>
+        </div>  
         <div className='vh-100 w-100 d-flex justify-content-center font_0 bg-white'>
 
         <div style={{width: '90%', height: '90%'}} className='mainTextElement .text-center mt-7'>
@@ -59,7 +59,7 @@ const StartedPage = () => {
 
         {/* Third part */}
 
-        <div className="vh-100 w-100 d-flex align-items-center justify-content-center">
+        <div className="vh-100 w-100 d-flex align-items-center justify-content-center bg-white">
           <div style={{height: '90%', width: '90%'}} className="">
             <h1 style={{color: 'black',fontSize: '100px'}}>Fooooood</h1>
             <p style={{color: 'black', fontSize: '18px', width: '80%'}}>I am extremely inspired by food and the colors different cuisines display. Here are some of the dishes that have worked as inspiration for projects displayed on my portfolio.</p>

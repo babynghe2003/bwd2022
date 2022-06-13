@@ -39,6 +39,12 @@ import posts from "../../datas/posts.js";
 const HomePage = (props) => {
   const [hide, setHide] = useState([])
 
+  const [searchTexts, setSearchTexts] = useState("")
+  
+  function handleSearch(event) {
+    setSearchTexts(event.target.value.toLowerCase().trim());
+    console.log(searchTexts);
+  }
 
   const handlerHide = (id) => {
     console.log(id);
@@ -69,14 +75,15 @@ const HomePage = (props) => {
   }
   const getQuestion = (questions) => {
 
-    const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
+    // const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
 
+    const questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))))
     return questionTemp.map((question, index) => {
       return (
           <tr key={index}> 
             <td width='6%' className="">
 
-              {question.vote > 0 ?
+              {question.vote > 0 ?  
                 <i className="fas fa-arrow-up text-success mr-3 ml-4" /> :
                 <i className="fas fa-arrow-down text-danger mr-3 ml-4" />}
 
@@ -232,7 +239,7 @@ const HomePage = (props) => {
                           <i className="fas fa-search" />
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input placeholder="Search" type="text" name="search" />
+                      <Input placeholder="Search" type="text" name="search" onChange={handleSearch} />
                     </InputGroup>
                   </div>
                 </Form>

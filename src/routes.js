@@ -13,7 +13,7 @@ var routes = [
     name: "Home",
     icon: "ni ni-planet text-indigo",
     component: StartedPage,
-    layout: "/admin"
+    layout: "/auth"
   },
   {
     path: "/index",

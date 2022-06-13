@@ -10,7 +10,6 @@ const Header = () => {
             {/* Card stats */}
             <Row>
               <Col lg="6" xl="3">
-
               </Col>
             </Row>
           </div>

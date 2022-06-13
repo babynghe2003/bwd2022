@@ -92,9 +92,20 @@ const Sidebar = (props) => {
     };
   }
 
+  const [toggle, setToggle] = useState(false); 
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  }
+
   return (
+    <>
+    <div style={{position: 'absolute', zIndex: '200', paddingLeft: `${toggle ? '250px' : '0px'}`}} >
+        <button onClick={handleToggle}>...</button>
+    </div>  
     <Navbar
-      className="navbar-vertical fixed-left navbar-light bg-white"
+      style={{zIndex: '300', position: 'fixed', transition: 'all 2s ease'}}
+      className={`navbar-vertical left-0 navbar-light bg-white overflow-hidden ${toggle ? '' : 'd-none'} `}
       expand="md"
       id="sidenav-main"
     >
@@ -165,7 +176,7 @@ const Sidebar = (props) => {
                 <span>Activity</span>
               </DropdownItem>
               <DropdownItem to="/admin/user-profile" tag={Link}>
-                <i className="ni ni-support-16" />
+                <i className="ni ni-support-16" />  
                 <span>Support</span>
               </DropdownItem>
               <DropdownItem divider />
@@ -231,6 +242,8 @@ const Sidebar = (props) => {
         </Collapse>
       </Container>
     </Navbar>
+
+    </>
   );
 };
 
