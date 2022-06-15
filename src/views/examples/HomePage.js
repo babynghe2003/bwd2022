@@ -40,22 +40,12 @@ const HomePage = (props) => {
   const [usersState, setUsers] = useState(users);
   const [questionsState, setQuestions] = useState(questions);
 
-  const sortBy = (question) => {
-    switch (question) {
-      case "vote":
-        setQuestions([...questionsState].sort((a,b)=>b.vote-a.vote))
-        console.log(questionsState)
-        break;
-      case "answer":
-        setQuestions([...questionsState].sort((a,b)=>b.answers.length-a.answers.length))
-        console.log(questionsState)
-        break;
-      default:
-        break;
-    }
+  const [searchTexts, setSearchTexts] = useState("")
+  
+  function handleSearch(event) {
+    setSearchTexts(event.target.value.toLowerCase().trim());
+    console.log(searchTexts);
   }
-
-  const [hide, setHide] = useState([])
 
   const handlerHide = (id) => {
     console.log(id);
@@ -84,14 +74,17 @@ const HomePage = (props) => {
       )
     })
   }
-  const getQuestion = () => {
-    return questionsState.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)))
-    .map((question, index) => {
+  const getQuestion = (questions) => {
+
+    // const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
+
+    const questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))))
+    return questionTemp.map((question, index) => {
       return (
           <tr key={index}> 
             <td width='6%' className="">
 
-              {question.vote > 0 ?
+              {question.vote > 0 ?  
                 <i className="fas fa-arrow-up text-success mr-3 ml-4" /> :
                 <i className="fas fa-arrow-down text-danger mr-3 ml-4" />}
 
@@ -247,7 +240,7 @@ const HomePage = (props) => {
                           <i className="fas fa-search" />
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input placeholder="Search" type="text" name="search" />
+                      <Input placeholder="Search" type="text" name="search" onChange={handleSearch} />
                     </InputGroup>
                   </div>
                 </Form>
