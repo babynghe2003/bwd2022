@@ -1,0 +1,94 @@
+.claims {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 160px;
+}
+
+/* Claims' Section */
+.ClaimsSection {
+    margin-right: 64px;
+    margin-left: auto;
+    padding-top: 128px;
+    padding-bottom: 0;
+    padding-left: 96px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background-color: #fff;
+}
+
+/* Claims' Content */
+.claimsContent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 128px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+}
+
+/* Claims Text Content */
+.claimsText {
+    max-width: 400px;
+    margin-right: 96px;
+}
+
+/* Heading Claims Text */
+.headingClaimsText {
+    margin-top: 0;
+    margin-bottom: 56px;
+    letter-spacing: -.03em;
+}
+
+/* Heading Title Content */
+.heading-3 {
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/* Claims Image Content */
+.claimsImg {
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    width: 72%;
+    height: 100%;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Img in Claims Content */
+.wygScreenshot {
+    position: absolute;
+    left: 10%;
+    top: 105px;
+    height: 1035px;
+    max-width: none;
+}
+
+/* img */
+img {
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+}

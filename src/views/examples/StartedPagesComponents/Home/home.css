@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.home {
+    padding: 72px 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 19px 30px -15px rgb(0 0 0 / 10%);
+    margin-bottom: 160px;
+}
+
+/* Image */
+.hero-illustration {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    display: block;
+    min-width: 60%;
+    border: 0;
+    vertical-align: middle;
+
+}
+
+/* Content Section */
+.contentSection {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 25vw;
+    padding-top: 0;
+    padding-bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Text Section in Content Section */
+.content {
+    width: auto;
+    max-width: 800px;
+    margin-top: 0;
+    margin-left: 88px;
+    object-fit: fill;
+}
+
+/* Title Section in Text Section */
+.titleSection {
+    margin-bottom: 40px;
+    color: #111;
+    font-size: 70px;
+    line-height: 100%;
+    letter-spacing: -2px;
+}
+
+/* Logo */
+.heroLogo {
+    margin-bottom: 56px;
+}
+
+/* TextSpan in Text Section */
+.textSpan {
+    background-image: linear-gradient(135deg,#ff4136,#5b53ff);
+    color: #000;
+    text-align: left;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Text in Content Section */
+.textSection {
+    width: 75%;
+    margin-bottom: 80px;
+    color: #111;
+    font-size: 24px;
+    list-height: 150%;   
+}

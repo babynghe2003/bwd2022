@@ -1,0 +1,19 @@
+.startedNavbar {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.containerNavbar {
+    height: inherit;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 17px;
+}
+
+.servicesNavbar {
+    line-height: 21.6px;
+}
