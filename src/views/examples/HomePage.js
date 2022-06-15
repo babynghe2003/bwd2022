@@ -37,8 +37,25 @@ import { useState } from "react";
 import posts from "../../datas/posts.js";
 
 const HomePage = (props) => {
-  const [hide, setHide] = useState([])
+  const [usersState, setUsers] = useState(users);
+  const [questionsState, setQuestions] = useState(questions);
 
+  const sortBy = (question) => {
+    switch (question) {
+      case "vote":
+        setQuestions([...questionsState].sort((a,b)=>b.vote-a.vote))
+        console.log(questionsState)
+        break;
+      case "answer":
+        setQuestions([...questionsState].sort((a,b)=>b.answers.length-a.answers.length))
+        console.log(questionsState)
+        break;
+      default:
+        break;
+    }
+  }
+
+  const [hide, setHide] = useState([])
 
   const handlerHide = (id) => {
     console.log(id);
@@ -50,10 +67,10 @@ const HomePage = (props) => {
 
   const location = useLocation();
   const getUserName = (userID) => {
-    const user = users.find((user) => user.id === userID);
+    const user = usersState.find((user) => user.id === userID);
     return user.username;
   }
-  const userCurrent = users.find(user => user.id == new URLSearchParams(location.search).get('id'));
+  const userCurrent = usersState.find(user => user.id == new URLSearchParams(location.search).get('id'));
   const tagCurrent = new URLSearchParams(location.search).get('tags');
   console.log(userCurrent);
   console.log(tagCurrent);
@@ -67,11 +84,9 @@ const HomePage = (props) => {
       )
     })
   }
-  const getQuestion = (questions) => {
-
-    const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
-
-    return questionTemp.map((question, index) => {
+  const getQuestion = () => {
+    return questionsState.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)))
+    .map((question, index) => {
       return (
           <tr key={index}> 
             <td width='6%' className="">
@@ -99,7 +114,7 @@ const HomePage = (props) => {
                 {getTagsName(question)}
                 </div>
                 <div className="float-right mt-3" width="">
-                <Link class="text-info">@{getUserName(question.userID)}</Link> <span className="text-muted">at 10/2/2022</span>
+                <Link class="text-info">@{getUserName(question.userID)}</Link> <span className="text-muted" to="/">at 10/2/2022</span>
                 </div>
               </div>
 
@@ -199,9 +214,9 @@ const HomePage = (props) => {
               <CardHeader className="border-0">
                 <h1 className="mb-0 float-left">Top Questions</h1>
                 <ButtonGroup className="float-right">
-                  <Button className="text-primary">Lastest</Button>
-                  <Button className="text-primary">Most voted</Button>
-                  <Button className="text-primary">Most answered</Button>
+                  <Button className="text-primary" onClick={(e) => sortBy("time")}>Lastest</Button>
+                  <Button className="text-primary" onClick={(e) => sortBy("vote")}>Most voted</Button>
+                  <Button className="text-primary" onClick={(e) => sortBy("answer")}>Most answered</Button>
                 </ButtonGroup>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
@@ -213,7 +228,7 @@ const HomePage = (props) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {getQuestion(questions)}
+                  {getQuestion(questionsState)}
                 </tbody>
               </Table>
             </Card>
