@@ -1,5 +1,7 @@
 
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react"
+import auth from "../../api-client/auth-helper"
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -12,8 +14,11 @@ import {
   Row,
   Col,
 } from "reactstrap";
+const jwt = auth.isAuthenticated()
+
 
 const AdminNavbar = () => {
+
   return (
     <>
       <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">

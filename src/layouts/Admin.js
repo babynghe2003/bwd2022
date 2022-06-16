@@ -11,8 +11,7 @@ import Sidebar from "../components/Sidebar/Sidebar.js";
 import routes from "../routes.js";
 
 //data source
-import questions from "../datas/questions";
-import users from "../datas/users.js";
+
 import Loading from "views/examples/Loading.js";
 
 const Admin = (props) => {
@@ -37,7 +36,7 @@ const Admin = (props) => {
         return (
           <Route
           path={prop.layout + prop.path}
-          render={(props) => (loading ? <Loading/> : <prop.component users={users} />)}
+          render={(props) => (loading ? <Loading/> : <prop.component users={""} />)}
           key={key}
         />
         );
@@ -45,7 +44,7 @@ const Admin = (props) => {
         return (
           <Route
             path={prop.layout + prop.path}
-            render={(props) => (loading ? <Loading/> : <prop.component questions={questions} users={users}/>)}
+            render={(props) => (loading ? <Loading/> : <prop.component questions={""} users={""}/>)}
             key={key}
           />
         );
@@ -83,7 +82,7 @@ const Admin = (props) => {
         <AdminNavbar
           {...props}
           brandText={getBrandText(props.location.pathname)}
-          users={users}
+          users={""}
         />
         <Switch>
           {getRoutes(routes)}

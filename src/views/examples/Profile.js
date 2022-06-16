@@ -17,23 +17,24 @@ import UserHeader from "components/Headers/UserHeader.js";
 import users from "../../datas/users";
 import questions from "../../datas/questions";
 import { Link } from "react-router-dom";
+import auth from "../../api-client/auth-helper"
 
 const Profile = () => {
   // const history = useHistory();
-  const userCurrent = users.find(user => user.email === localStorage.getItem('accessToken'));
-  const countQuestion = questions.filter(question => question.userID === userCurrent.id).length;
-  var countAnswer = 0;
-  questions.forEach(question => {
-    question.answers.forEach(answer => {
-      if(answer.userID === userCurrent.id){
-        countAnswer++;
-      }
-    })
-  });
+  // const userCurrent = users.find(user => user.email === localStorage.getItem('accessToken'));
+  // const countQuestion = questions.filter(question => question.userID === uIDserCurrent.id).length;
+  // var countAnswer = 0;
+  // questions.forEach(question => {
+  //   question.answers.forEach(answer => {
+  //     if(answer.userID === userCurrent.id){
+  //       countAnswer++;
+  //     }
+  //   })
+  // });
 
   return (
     <>
-      <UserHeader username={userCurrent.username}/>
+      <UserHeader username={auth.isAuthenticated().user.username}/>
       {/* Page content */}
       <Container className="mt--7" fluid>
         <Row>
@@ -82,14 +83,14 @@ const Profile = () => {
                   <div className="col">
                     <div className="card-profile-stats d-flex justify-content-center mt-md-5">
                       <div>
-                      <Link to = {'/admin/index?id='+userCurrent.id}>
-                        <span className="heading" >{countQuestion}</span>
+                      <Link to = {'/admin/index?id='+auth.isAuthenticated().user.user_id}>
+                        <span className="heading" >"countQuestion"</span>
                         <span className="description">Questions</span>
                       </Link>
                         
                       </div>
                       <div>
-                        <span className="heading">{countAnswer}</span>
+                        <span className="heading">"countAnswer"</span>
                         <span className="description">Answers</span>
                       </div>
                      
@@ -98,12 +99,12 @@ const Profile = () => {
                 </Row>
                 <div className="text-center">
                   <h3>
-                    {userCurrent.username}
-                    <span className="font-weight-light">, {userCurrent.age}</span>
+                    {auth.isAuthenticated().user.username}
+                    <span className="font-weight-light">, "userCurrent.age"</span>
                   </h3>
                   <div className="h5 font-weight-300">
                     <i className="ni location_pin mr-2" />
-                    {userCurrent.city}
+                    "userCurrent.city"
                   </div>
             
                 </div>
@@ -146,7 +147,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue={userCurrent.username}
+                            defaultValue={auth.isAuthenticated().user.username}
                             id="input-username"
                             placeholder="Username"
                             type="text"
@@ -164,7 +165,7 @@ const Profile = () => {
                           <Input
                             className="form-control-alternative"
                             id="input-email"
-                            placeholder={userCurrent.email}
+                            placeholder={auth.isAuthenticated().user.email}
                             type="email"
                           />
                         </FormGroup>
@@ -190,7 +191,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue={userCurrent.city}
+                            defaultValue={"userCurrent.city"}
                             id="input-city"
                             placeholder="City"
                             type="text"
@@ -209,7 +210,7 @@ const Profile = () => {
                           <Input
                             className="form-control-alternative"
                             id="input-postal-code"
-                            placeholder={userCurrent.phone}
+                            placeholder={"userCurrent.phone"}
                             type="text"
 
                           />
@@ -227,7 +228,7 @@ const Profile = () => {
                         className="form-control-alternative"
                         placeholder="A few words about you ..."
                         rows="4"
-                        defaultValue={userCurrent.about}
+                        defaultValue={"userCurrent.about"}
                         type="textarea"
                       />
                     </FormGroup>

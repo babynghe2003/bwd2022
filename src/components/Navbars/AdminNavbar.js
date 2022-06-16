@@ -1,5 +1,9 @@
 
 import { Link, useHistory } from "react-router-dom";
+
+import React, { useState, useEffect } from "react"
+import auth from "../../api-client/auth-helper"
+import { read } from "../../api-client/api-user"
 // reactstrap components
 import {
   DropdownMenu,
@@ -20,15 +24,24 @@ import {
 
 
 const AdminNavbar = (props) => {
-
+  const jwt = auth.isAuthenticated()
+  const [user, setUser] = useState({})
+  console.log(auth.isAuthenticated())
   let history = useHistory();
   const logout = () => {
-    localStorage.removeItem('accessToken');
-    history.replace('/login');
+    auth.clearJWT(history.push('/auth/login'))
   }
 
-  const userCurrent = props.users.find(user => user.email === localStorage.getItem('accessToken'));
-  
+  // useEffect(() => {
+  //   const abortController = new AbortController()
+  //   const signal = abortController.signal
+  //   read({
+  //     userId: auth.isAuthenticated()
+  //   }, {t: jwt.token}, signal).then((data) => {
+  //     setUser(data)
+  //     console.log(user + "HEHEHE")
+  //   })
+  // }, [auth.isAuthenticated()])
 
   return (
     <>
@@ -67,7 +80,7 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      @{userCurrent.username}
+                      @{auth.isAuthenticated().user.username}
                     </span>
                   </Media>
                 </Media>

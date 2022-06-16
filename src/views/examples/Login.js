@@ -15,23 +15,38 @@ import {
 } from "reactstrap";
 import users from "../../datas/users";
 import {useState} from "react"
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
+import { signin } from "../../api-client/api-auth"
+import auth from "../../api-client/auth-helper"
 
 const Login = () => {
+  // States
+  const [values, setValues] = useState({
+    username: '',
+    password: ''
+  })
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const handleChange = name => event => {
+    console.log(name + " " + event)
+    setValues({...values, [name]: event.target.value})
+  }
+
   const [error, setError] = useState("");
   let history = useHistory();
 
+ 
   const checkLogin = () => {
-    let user = users.find(user => user.email === email && user.password === password);
-    if(user){
-      localStorage.setItem('accessToken',user.email);
-      history = history.replace("/admin/index");
-    }else{
-      setError("Email or password is incorrect");
+    const user = {
+      email: values.email || undefined,
+      password: values.password || undefined
     }
+    console.log(user)
+    signin(user).then((data) => {
+      auth.authenticate(data, () => {
+        setValues({...values})
+        history.push("/admin/icons");
+      })
+    })
   }
 
   return (
@@ -40,7 +55,7 @@ const Login = () => {
         <Card className="bg-secondary shadow border-0">
           <CardHeader className="bg-transparent pb-5">
             <div className="text-muted text-center mt-2 mb-3">
-              <small>Sign in with</small>
+              <small>Sign in with</small>a
             </div>
             <div className="btn-wrapper text-center">
               <Button
@@ -91,9 +106,7 @@ const Login = () => {
                   <Input
                     placeholder="Email"
                     type="email"
-                    autoComplete="new-email"
-                    value={email}
-                    onChange={e=> setEmail(e.target.value)}
+                    onChange={handleChange('email')}
                   />
                 </InputGroup>
               </FormGroup>
@@ -107,9 +120,7 @@ const Login = () => {
                   <Input
                     placeholder="Password"
                     type="password"
-                    autoComplete="new-password"
-                    value={password}
-                    onChange={e=> setPassword(e.target.value)}
+                    onChange={handleChange('password')}
                   />
                 </InputGroup>
               </FormGroup>
