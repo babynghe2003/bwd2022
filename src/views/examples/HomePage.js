@@ -47,6 +47,23 @@ const HomePage = (props) => {
     console.log(searchTexts);
   }
 
+  const sortBy = (question) => {
+    switch (question) {
+      case "vote":
+        setQuestions([...questionsState].sort((a,b)=>b.vote-a.vote))
+        console.log(questionsState)
+        break;
+      case "answer":
+        setQuestions([...questionsState].sort((a,b)=>b.answers.length-a.answers.length))
+        console.log(questionsState)
+        break;
+      default:
+        break;
+    }
+  }
+
+  const [hide, setHide] = useState([])
+
   const handlerHide = (id) => {
     console.log(id);
 

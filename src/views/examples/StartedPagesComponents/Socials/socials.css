@@ -1,0 +1,69 @@
+.socials {
+    margin-top: 450px;
+    height: 70vh;
+    width: 100%;
+}
+
+/* Wrapper Socials */
+.wrapperSocials {
+    display: block;
+    width: 100%;
+    max-width: 1216px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+/* Content Socials */
+.contentSocials {
+    max-width: 1216px;
+    margin-bottom: 80px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    display: contents;
+}
+
+/* Heading Title Socials Content */
+.headingTitleSocials {
+    margin-bottom: 80px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+
+/* Socials' Brand Container */
+.socialsBrandsContainer {
+    padding: 16px 40px;
+    align-self: stretch;
+    -webkit-box-flex: 0;
+    flex: 0 auto;
+    border-radius: 22px;
+    background-color: #fff;
+    box-shadow: 0 19px 30px -15px rgb(0 0 0 / 10%);
+}
+
+/* Socials' Brand Row */
+.socialsBrandsRow {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    justify-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    align-content: center;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+/* Socials' Brand Container */
+.socialsBrand {
+    margin-right: 24px;
+    margin-left: 24px;
+    align-self: auto;
+}

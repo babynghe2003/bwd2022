@@ -4,6 +4,7 @@ import './advertisement.css'
 export default function Advertisement() {
   return (
     <div className='advertisement'>
+        
       <h1 className='headingTextAds'>Level up your craft and career with Pttrns.s </h1>
         <div className='cardsAds'>
           <div className='cardsAdsTitle'>Quarterly plan</div>

@@ -8,6 +8,7 @@ import QuestionPage from "views/examples/QuestionPage.js";
 import Post from "views/examples/Post";
 import StartedPage from "views/examples/StartedPage";
 var routes = [
+
   {
     path: "/home",
     name: "Home",
