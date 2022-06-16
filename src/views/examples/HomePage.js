@@ -178,20 +178,20 @@ const HomePage = (props) => {
   const getPosts = (posts) => {
     return posts.map((post, index) => {
       return (
-        <div key={index}>
-          <div className="avatar float-left mr-1">
+        <div key={index} className="flex-row py-1" style={{borderBottom: '1px solid rgba(0,0,0,0.1'}}>
+          <div className="float-left mr-3">
             <img
               alt="..."
-              className="rounded-circle"
               src={
-                require("../../assets/img/theme/abc.webp")
-                  .default
+                post.imgSrc
               }
+              width="150px"
+              height="150px"
             />
 
           </div>
-          <div>
-            <span className="mb-0 text-sm" style={{ fontWeight: 600 }}>
+          <div className="">
+            <span className="mb-0 text-lg" style={{ fontWeight: 600 }}>
               <Link to={`/admin/post?postID=${post.id}`} >
                 {post.title}
               </Link>
@@ -266,7 +266,7 @@ const HomePage = (props) => {
               <CardHeader className="border-0">
                 <h3 className="mb-0">Lastest Post</h3>
               </CardHeader>
-              <CardBody>
+              <CardBody className="row">
                 {getPosts(posts)}
               </CardBody>
             </Card>
