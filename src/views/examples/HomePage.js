@@ -41,6 +41,7 @@ const HomePage = (props) => {
   const [questionsState, setQuestions] = useState(questions);
 
   const [searchTexts, setSearchTexts] = useState("")
+  const [hide,setHide] = useState([])
   
   function handleSearch(event) {
     setSearchTexts(event.target.value.toLowerCase().trim());
@@ -61,8 +62,6 @@ const HomePage = (props) => {
         break;
     }
   }
-
-  const [hide, setHide] = useState([])
 
   const handlerHide = (id) => {
     console.log(id);

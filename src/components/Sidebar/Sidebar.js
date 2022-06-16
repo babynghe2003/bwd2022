@@ -100,12 +100,9 @@ const Sidebar = (props) => {
 
   return (
     <>
-    <div style={{position: 'absolute', zIndex: '200', paddingLeft: `${toggle ? '250px' : '0px'}`}} >
-        <button onClick={handleToggle}>...</button>
-    </div>  
+
     <Navbar
-      style={{zIndex: '300', position: 'fixed', transition: 'all 2s ease'}}
-      className={`navbar-vertical left-0 navbar-light bg-white overflow-hidden ${toggle ? '' : 'd-none'} `}
+      className="navbar-vertical fixed-left navbar-light bg-white"
       expand="md"
       id="sidenav-main"
     >
@@ -237,7 +234,6 @@ const Sidebar = (props) => {
           <Nav navbar>{createLinks(routes)}</Nav>
           {/* Divider */}
           <hr className="my-3" />
-
      
         </Collapse>
       </Container>
