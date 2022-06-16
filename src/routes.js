@@ -8,6 +8,7 @@ import QuestionPage from "views/examples/QuestionPage.js";
 import Post from "views/examples/Post";
 import StartedPage from "views/examples/StartedPage";
 var routes = [
+<<<<<<< Updated upstream
   {
     path: "/home",
     name: "Home",
@@ -15,6 +16,8 @@ var routes = [
     component: StartedPage,
     layout: "/auth"
   },
+=======
+>>>>>>> Stashed changes
   {
     path: "/index",
     name: "Questions",

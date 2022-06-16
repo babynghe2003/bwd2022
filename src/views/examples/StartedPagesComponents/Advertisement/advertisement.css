@@ -1,0 +1,71 @@
+.advertisement {
+    margin-right: auto;
+    margin-left: 64px;
+    padding: 128px 96px;
+    border-radius: 22px 0 0 22px;
+    background-color: #111;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    align-self: center;
+}
+
+.headingTextAds {
+    color: #fff;
+    max-width: 330px;
+    font-size: 64px;
+    line-height: 1em;
+    font-weight: 800;
+}
+
+.cardsAds {
+    margin-left: 20px;
+    min-height: 500px;
+    width: 354px;
+    margin-right: 16px;
+    padding: 24px 32px 32px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-radius: 22px;
+    background-color: #5b53ff;
+    background-image: url(https://assets-global.website-files.com/5fce901…/620d12a…_bg-pricing-card.png);
+    background-position: 100% 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.cardsAdsTitle{
+    overflow: visible;
+    padding: 5px 12px;
+    float: left;
+    border-radius: 50px;
+    background-color: hsla(0,0%,100%,.3);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cardsAdsPrice {
+    position: relative;
+    margin-top: 45px;
+    margin-bottom: 16px;
+    color: #fff;
+    font-size: 70px;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.cardsAdsText {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+}

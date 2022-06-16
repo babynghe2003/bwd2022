@@ -53,7 +53,11 @@ const AdminNavbar = () => {
             </div>
             <Nav className="ml-auto" navbar>
               <NavItem>
+<<<<<<< Updated upstream
                 <NavLink className="nav-link-icon" to="/auth/home" tag={Link}>
+=======
+                <NavLink className="nav-link-icon" to="/home" tag={Link}>
+>>>>>>> Stashed changes
                   <i className="ni ni-planet" />
                   <span className="nav-link-inner--text">Home</span>
                 </NavLink>
