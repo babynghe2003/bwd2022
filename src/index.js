@@ -14,12 +14,13 @@ import StartedPage from "views/examples/StartedPage";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      <Route path="/home" render={StartedPage}/>
       <Route path="/admin" render={(props) => {
         return localStorage.getItem('accessToken') ? <AdminLayout {...props} /> : <Redirect  to={'/auth/login'} />
       }} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
       <Route path="/home" render={StartedPage}/>
-      <Redirect from="*" to="/admin/index" />
+      <Redirect from="*" to="/home" />
       
     </Switch>
   </BrowserRouter>,

@@ -81,7 +81,7 @@ var questions = [
         userID: 2,
         title: 'What does transgender mean and how can I challenge transphobia? ',
         description: 'What does transgender mean and how can I challenge transphobia?',
-        vote: 4,
+        vote: -5,
         answers: [
             {
                 userID: 2, content: 'You can find your nearest sexual health services',

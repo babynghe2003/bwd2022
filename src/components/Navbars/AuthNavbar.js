@@ -53,7 +53,7 @@ const AdminNavbar = () => {
             </div>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink className="nav-link-icon" to="/admin/index" tag={Link}>
+                <NavLink className="nav-link-icon" to="/home" tag={Link}>
                   <i className="ni ni-planet" />
                   <span className="nav-link-inner--text">Home</span>
                 </NavLink>

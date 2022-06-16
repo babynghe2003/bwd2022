@@ -69,15 +69,16 @@ const Admin = (props) => {
 
   return (
     <>
-      <Sidebar
-        {...props}
-        routes={routes}
-        logo={{
-          innerLink: "/admin/index",
-          imgSrc: require("../assets/img/brand/logo.png").default,
-          imgAlt: "...",
-        }}
-      />
+    <Sidebar
+      {...props}
+      routes={routes}
+      logo={{
+        innerLink: "/admin/index",
+        imgSrc: require("../assets/img/brand/logo.png").default,
+        imgAlt: "...",
+      }}
+
+    />
       <div className="main-content" ref={mainContent}>
         <AdminNavbar
           {...props}
