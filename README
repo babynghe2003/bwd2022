@@ -1,0 +1,42 @@
+
+:3001/api/auth/login , :3001/api/auth/register
+{
+    "username": "",
+    "password": ""
+}
+
+GET :3001/api/question/
+POST :3001/api/question/
+{
+    "title"
+    "content"
+    "tags" [
+        "tag1",
+        "tag2",
+        "tag3"
+    ]        
+}
+GET :3001/api/question/:id
+
+GET :3001/api/comment/:id
+POST :3001/api/comment/
+{
+    "content"
+    "question_id"
+}
+
+GET :3001/api/vote/:id_question
+GET :3001/api/vote/:id_comment
+
+POST :3001/api/vote/
+{
+    "question_id" : "",
+    "isGood" // true or false
+}
+||
+{
+    "comment_id" : "",
+    "isGood" // true or false
+}
+
+GET :3001/api/user/:id
