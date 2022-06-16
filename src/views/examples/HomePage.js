@@ -63,12 +63,24 @@ const HomePage = (props) => {
     }
   }
 
-  const handlerHide = (id) => {
+  const handlerHide = (e,id) => {
+    e.preventDefault();
     console.log(id);
-
-    setHide([...hide, id])
+    
     console.log(hide);
+    if (window.confirm('Are you sure you wantn to hide this question?')) {
+      setHide([...hide, id])
+    } 
+  }
 
+  const handlerReport = (e,id) => {
+    e.preventDefault();
+    console.log(id);
+    
+    console.log(hide);
+    if (window.confirm('Are you sure you wantn to report this question?')) {
+      setHide([...hide, id])
+    } 
   }
 
   const location = useLocation();
@@ -92,9 +104,9 @@ const HomePage = (props) => {
   }
   const getQuestion = (questions) => {
 
-    // const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
-
-    const questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))))
+    var questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
+    if(searchTexts.length>0)
+    questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))  && !hide.includes(question.id)))
     return questionTemp.map((question, index) => {
       return (
           <tr key={index}> 
@@ -145,13 +157,13 @@ const HomePage = (props) => {
                 <DropdownMenu className="dropdown-menu-arrow" right>
                   <DropdownItem
                     href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    onClick={(e) => handlerReport(e,question.id)}
                   >
                     Report
                   </DropdownItem>
                   <DropdownItem
                     href="#pablo"
-                    onClick={(e) => handlerHide(question.id)}
+                    onClick={(e) => handlerHide(e,question.id)}
                   >
                     Hide
                   </DropdownItem>
