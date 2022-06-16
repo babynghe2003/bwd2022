@@ -35,6 +35,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import './overlay.css'
 
 
 const Sidebar = (props) => {
@@ -100,12 +101,14 @@ const Sidebar = (props) => {
 
   return (
     <>
-    <div style={{position: 'absolute', zIndex: '200', paddingLeft: `${toggle ? '250px' : '0px'}`}} >
-        <button onClick={handleToggle}>...</button>
-    </div>  
+    <button type="button" onClick={handleToggle} className="hamburger animated fadeInLeft is-closed" dataToggle="offcanvas">
+            <span className="hamb-top"></span>
+            <span className="hamb-middle"></span>
+            <span className="hamb-bottom"></span>
+    </button>
     <Navbar
-      style={{zIndex: '300', position: 'fixed', transition: 'all 2s ease'}}
-      className={`navbar-vertical left-0 navbar-light bg-white overflow-hidden ${toggle ? '' : 'd-none'} `}
+      style={{zIndex: '300', position: 'fixed', transition: 'all 2s ease', marginLeft: `${toggle ? '0' : '-250px'}`}}
+      className={`navbar-vertical left-0 navbar-light bg-white overflow-hidden `}
       expand="md"
       id="sidenav-main"
     >
@@ -237,7 +240,6 @@ const Sidebar = (props) => {
           <Nav navbar>{createLinks(routes)}</Nav>
           {/* Divider */}
           <hr className="my-3" />
-
      
         </Collapse>
       </Container>
