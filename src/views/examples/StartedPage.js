@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Advertisement from './StartedPagesComponents/Advertisement/Advertisement'
 import Claims from './StartedPagesComponents/Claims/Claims'
 import Home from './StartedPagesComponents/Home/Home'
@@ -6,7 +6,10 @@ import Inspiration from './StartedPagesComponents/Inspiration/Inspiration'
 import Navbar from './StartedPagesComponents/Navbar/Navbar'
 import Socials from './StartedPagesComponents/Socials/Socials'
 
-const StartedPage = () => {
+import React, { useEffect, useState } from 'react'
+
+const StartedPage = (props) => {
+  
   return (
     <>
       <div>
@@ -26,7 +29,14 @@ const StartedPage = () => {
           }}
         />
         <Socials/>
-        <Claims/>
+        <Claims
+          img={{
+            innerLink: "/admin/index",
+            imgSrc: require("../../assets/img/home/thumbnail.png").default,
+            imgAlt: "...",
+
+          }}
+        />
         <Inspiration/>  
         <Advertisement/>
       </div>

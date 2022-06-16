@@ -6,10 +6,10 @@ export default function Navbar() {
     <div className='startedNavbar'>
       <div className='containerNavbar'>
         <div className='servicesNavbar'>
-          <a href="/auth/register" className="btn btn-primary btn-large w-inline-block">
+          <a href="/auth/register" className="btn btn-primary btn-large text-lg w-inline-block">
               <div>Register</div>
           </a>
-          <a href="/auth/login" className="btn btn-default btn-large w-inline-block">
+          <a href="/auth/login" className="btn btn-default btn-large text-lg w-inline-block">
             <div>Log in</div>
           </a>
         </div>

@@ -75,8 +75,12 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    transition: 2s;
+    transform: translateX(900px);
 }
-
+.active{
+    transform: translateX(0);
+}
 /* Img in Claims Content */
 .wygScreenshot {
     position: absolute;

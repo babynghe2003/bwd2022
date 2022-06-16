@@ -31,7 +31,7 @@ const getTags = (tags) => {
                             type="button"
                           >
                             <div>
-                              <span>#{tag}</span> </div>
+                              <span style={{fontSize: "1.3rem" }} className="text-primary">#{tag}</span> </div>
                           </button>
                           </a>
                        
@@ -40,7 +40,7 @@ const getTags = (tags) => {
     });
   }
   return (
-    <div className='socials'>
+    <div className='socials bg-gradient-info'>
         <div className='wrapperSocials'>
             <div className='contentSocials'>
                 <h1 className='headingTitleSocials'>Lots of topics for everyone to discuss</h1>

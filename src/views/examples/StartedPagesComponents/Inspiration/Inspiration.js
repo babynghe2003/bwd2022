@@ -11,7 +11,7 @@ export default function Inspiration() {
                 </div>
                 <div className='textInspiration'>
                     <h1 className='heading-1'>Where the best designers go for inspiration and community.</h1>
-                    <div class="body-copy-2">Over 40,000 designers trust Pttrns as one of their top sources for production UI design research and inspiration. Improve your ideation and concept generation skills while saving hours of research time.</div>
+                    <div class="body-copy-2">More than 40000 young people trust <span className="text-primary">Now Or Never</span> you can join the exchange and discuss with others here to know a lot of useful knowledge.</div>
                 </div>
             </div>
         </div>

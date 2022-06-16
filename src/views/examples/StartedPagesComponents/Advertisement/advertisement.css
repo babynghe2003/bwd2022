@@ -1,18 +1,15 @@
 .advertisement {
     margin-right: auto;
     margin-left: 64px;
+    margin-bottom: 64px;
     padding: 128px 96px;
     border-radius: 22px 0 0 22px;
     background-color: #111;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    align-items: flex-start;
-    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .headingTextAds {
@@ -20,7 +17,9 @@
     max-width: 330px;
     font-size: 64px;
     line-height: 1em;
-    font-weight: 800;
+    font-weight: 500;
+    font-family: 'Paytone One', sans-serif;
+    margin-bottom: 100px;
 }
 
 .cardsAds {
@@ -33,12 +32,24 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    font-family: 'Paytone One', sans-serif;
     border-radius: 22px;
     background-color: #5b53ff;
-    background-image: url(https://assets-global.website-files.com/5fce901…/620d12a…_bg-pricing-card.png);
+    background-image: url(https://assets-global.website-files.com/5fce901…/620d12a…_bg-pricing-card.png),repeating-linear-gradient(135deg,#23b516,#ff6c36);
     background-position: 100% 0;
     background-size: auto;
     background-repeat: no-repeat;
+    text-align: center;
+    
+}
+.c2{
+    background-color: transparent;
+    background-image: url(https://assets-global.website-files.com/5fce901…/620d12a…_bg-pricing-card.png),repeating-linear-gradient(135deg,#5b53ff,#ff4136);
+    background-position: 100% 0,0 0;
+    background-size: auto,auto;
+    box-shadow: inset 0 0 0 4px #fff;
+    font-family: 'Paytone One', sans-serif;
+
 }
 
 .cardsAdsTitle{
@@ -49,7 +60,9 @@
     background-color: hsla(0,0%,100%,.3);
     color: #fff;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
+    
+    
 }
 
 .cardsAdsPrice {
@@ -57,9 +70,9 @@
     margin-top: 45px;
     margin-bottom: 16px;
     color: #fff;
-    font-size: 70px;
+    font-size: 30px;
     line-height: 1;
-    font-weight: 800;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -68,4 +81,33 @@
     color: #fff;
     font-size: 24px;
     line-height: 1;
+}
+.cardsAds img {
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.pricing-card-features {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    opacity: .7;
+}
+.pricing-card-feature-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 12px;
+}
+.text-block-36 {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
