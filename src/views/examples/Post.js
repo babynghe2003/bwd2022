@@ -68,21 +68,22 @@ const Post = () => {
                   
                   <Row className="mx-5">
                     <Col xl="1"></Col>
-                    <Col xl="8" className="text-dark">
+                    <Col xl="9" className="text-dark">
                       <div className="text-muted my-3" style={{ fontSize: '20px' }}>
                       {postCr.createdAt.yyyymmdd()}
                       </div> 
                       <div>
                         <postCr.content />
                       </div>
-                      <div className="text-right my-3">
-                        <a className="mr-5 mt-5 text text-user-info">
-                          @{getUserName(postCr.userID)}
+                      <div className="text-right my-3 mt-5 text text-user-info text-lg"> 
+                        by&nbsp;
+                        <a className="mt-5 text text-user-info text-lg">
+                           @{getUserName(postCr.userID)}
                         </a>
                       </div>
                       
                     </Col>
-                    <Col xl="3"></Col>
+                    <Col xl="2"></Col>
                   
                 </Row>
                 <Row className="flex-row justify-content-between">

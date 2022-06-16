@@ -17,7 +17,7 @@
     right: 0;
     top: 90px;
     display: block;
-    min-width: 60%;
+    width: 60%;
     border: 0;
     vertical-align: middle;
 
@@ -35,6 +35,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    width: 40%;
 }
 
 /* Text Section in Content Section */
@@ -58,6 +59,7 @@
 /* Logo */
 .heroLogo {
     margin-bottom: 56px;
+    width: 50%;
 }
 
 /* TextSpan in Text Section */

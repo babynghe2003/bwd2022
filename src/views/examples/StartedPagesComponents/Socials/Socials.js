@@ -43,7 +43,7 @@ const getTags = (tags) => {
     <div className='socials'>
         <div className='wrapperSocials'>
             <div className='contentSocials'>
-                <h3 className='headingTitleSocials'>Lots of topics for everyone to discuss</h3>
+                <h1 className='headingTitleSocials'>Lots of topics for everyone to discuss</h1>
                 <div className='socialsBrandsContainer'>
                     <Row className="icon-examples">
                     {getTags(questionsTags)}
