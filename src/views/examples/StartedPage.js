@@ -13,7 +13,18 @@ const StartedPage = () => {
         <div>
           <Navbar/>
         </div>
-        <Home/>
+        <Home
+          mainImg={{
+            innerLink: "/admin/index",
+            imgSrc: require("../../assets/img/home/main.png").default,
+            imgAlt: "...",
+          }}
+          logo={{
+            innerLink: "/admin/index",
+            imgSrc: require("../../assets/img/brand/logo.png").default,
+            imgAlt: "...",
+          }}
+        />
         <Socials/>
         <Claims/>
         <Inspiration/>  

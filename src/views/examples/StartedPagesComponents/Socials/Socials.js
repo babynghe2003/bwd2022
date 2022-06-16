@@ -1,27 +1,53 @@
 import React from 'react'
 import './socials.css'
+import questions from 'datas/questions'
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    Container,
+    Row,
+    Col,
+  } from "reactstrap";
 
 export default function Socials() {
+
+    const questionsTags = [];
+    questions.forEach((question) => {
+      question.tags.forEach((tag) => {
+        if (!questionsTags.includes(tag)) {
+          questionsTags.push(tag);
+        }
+      });
+    })
+const getTags = (tags) => {
+    return tags.map((tag, index) => {
+      return (
+        <Col lg="3" md="6" key={index}>
+                     
+                          <a to={'/admin/index?tags='+tag}> <button
+                            className="btn-icon-clipboard"
+                            id="tooltip982655500"
+                            type="button"
+                          >
+                            <div>
+                              <span>#{tag}</span> </div>
+                          </button>
+                          </a>
+                       
+            </Col>
+      );
+    });
+  }
   return (
     <div className='socials'>
         <div className='wrapperSocials'>
             <div className='contentSocials'>
-                <h3 className='headingTitleSocials'>Used daily by individuals, teams, and companies of all sizes</h3>
+                <h3 className='headingTitleSocials'>Lots of topics for everyone to discuss</h3>
                 <div className='socialsBrandsContainer'>
-                    <div className='socialsBrandsRow'>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                    </div>
-                    <div className='socialsBrandsRow'>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                        <img src="https://assets-global.website-files.com/5fce901dab92e15349a36fb7/614360f07c1a86b4106522a4_square.svg" loading="lazy" alt="" className="socialsBrand"/>
-                    </div>
+                    <Row className="icon-examples">
+                    {getTags(questionsTags)}
+                    </Row>
                 </div>
             </div>
         </div>
