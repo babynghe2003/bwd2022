@@ -26,7 +26,14 @@ const StartedPage = () => {
           }}
         />
         <Socials/>
-        <Claims/>
+        <Claims
+          img={{
+            innerLink: "/admin/index",
+            imgSrc: require("../../assets/img/home/thumbnail.png").default,
+            imgAlt: "...",
+
+          }}
+        />
         <Inspiration/>  
         <Advertisement/>
       </div>

@@ -31,7 +31,7 @@ const getTags = (tags) => {
                             type="button"
                           >
                             <div>
-                              <span>#{tag}</span> </div>
+                              <span style={{fontSize: "1.3rem" }} className="text-primary">#{tag}</span> </div>
                           </button>
                           </a>
                        
