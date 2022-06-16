@@ -7,6 +7,7 @@ import TagsPage from "views/examples/TagsPage.js";
 import QuestionPage from "views/examples/QuestionPage.js";
 import Post from "views/examples/Post";
 import StartedPage from "views/examples/StartedPage";
+import PostPage from "views/examples/PostPage";
 var routes = [
   {
     path: "/index",
@@ -56,6 +57,13 @@ var routes = [
     name: "post",
     icon: "ni ni-circle-08 text-pink",
     component: Post,
+    layout: "/admin",
+  },
+  {
+    path: "/postPage",
+    name: "post",
+    icon: "ni ni-circle-08 text-pink",
+    component: PostPage,
     layout: "/admin",
   },
 ];

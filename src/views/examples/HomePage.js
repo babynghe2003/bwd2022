@@ -204,7 +204,7 @@ const HomePage = (props) => {
           </div>
           <div className="">
             <span className="mb-0 text-lg" style={{ fontWeight: 600 }}>
-              <Link to={`/admin/post?postID=${post.id}`} >
+              <Link to={`/admin/postPage?postPageID=${post.id}`} >
                 {post.title}
               </Link>
             </span>
