@@ -6,12 +6,16 @@ import Inspiration from './StartedPagesComponents/Inspiration/Inspiration'
 import Navbar from './StartedPagesComponents/Navbar/Navbar'
 import Socials from './StartedPagesComponents/Socials/Socials'
 
-import React, { useEffect, useState } from 'react'
-
-const StartedPage = (props) => {
-  
+import { useState } from 'react'
+import Login from './Login'
+const StartedPage = () => {
+  const [toggle, setToggle] = useState(true)
+  const handleToggle = () => {
+    setToggle(!toggle)
+  }
   return (
     <>
+     
       <div>
         <div>
           <Navbar/>

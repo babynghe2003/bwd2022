@@ -35,7 +35,6 @@ import users from "../../datas/users.js";
 import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 import posts from "../../datas/posts.js";
-
 const HomePage = (props) => {
   const [usersState, setUsers] = useState(users);
   const [questionsState, setQuestions] = useState(questions);
@@ -109,6 +108,7 @@ const HomePage = (props) => {
     questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))  && !hide.includes(question.id)))
     return questionTemp.map((question, index) => {
       return (
+        <>          
           <tr key={index}> 
             <td width='6%' className="">
 
@@ -120,6 +120,7 @@ const HomePage = (props) => {
               {question.vote}
               
             </td>
+
             <th scope="row">
               <Media className="align-items-center">
                 <Media>
@@ -171,7 +172,7 @@ const HomePage = (props) => {
               </UncontrolledDropdown>
             </td>
           </tr>
-          
+          </>
           
       );
 
