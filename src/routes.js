@@ -8,6 +8,16 @@ import QuestionPage from "views/examples/QuestionPage.js";
 import Post from "views/examples/Post";
 import StartedPage from "views/examples/StartedPage";
 var routes = [
+<<<<<<< HEAD
+=======
+  {
+    path: "/home",
+    name: "Home",
+    icon: "ni ni-planet text-indigo",
+    component: StartedPage,
+    layout: "/auth"
+  },
+>>>>>>> main
   {
     path: "/index",
     name: "Questions",
