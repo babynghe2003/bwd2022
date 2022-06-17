@@ -11,7 +11,7 @@ module.exports = {
                 question: qs,
                 content: req.body.content
             });
-            cm.save();
+            await cm.save();
             return res.send(cm);
         }else{
             return res.status(400).json({ message: "question_id and content are required" });

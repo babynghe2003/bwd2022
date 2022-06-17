@@ -7,6 +7,7 @@ module.exports = {
     getAllQuestions: async (req, res) => {
         try {
             const questions = await question.find({});
+            console.log("Returned")
             res.status(200).json(questions);
         }
         catch (err) {
@@ -24,9 +25,11 @@ module.exports = {
     },
     createQuestion: async (req, res) => {
         try {
-            if(req.body.title && req.body.content && req.body.tags) {
+            console.log(req.body)
+            console.log(req.user.user_id)
+            if(req.body.data.title && req.body.data.content && req.body.data.tags) {
                 const us = await user.findById(req.user.user_id);            
-                let reqtags = req.body.tags;
+                let reqtags = req.body.data.tags;
                 let tg = [];
                 for(let i = 0; i < reqtags.length; i++) {
                     let tagg = await tag.findOne({ tag: reqtags[i] });
@@ -39,17 +42,16 @@ module.exports = {
                         tg.push(newtag._id);
                     }
                 }
-                console.log(tg); 
-                console.log("This is TG: " + tg)     
                 const qs = new question({
                     author: us,
-                    title: req.body.title,
-                    content: req.body.content,
+                    title: req.body.data.title,
+                    content: req.body.data.content,
                     tags: tg
                 });
                 await qs.save();
                 res.status(200).json(qs);
             }else{
+                console.log('err')
                 res.status(400).json({ message: "title, content and tags are required" });
             }            
         }
