@@ -69,12 +69,13 @@ module.exports = {
           return res.status('401').json({
             error: "User not found"
           })
-
-        // if (!user.authenticate(req.body.password)) {
-        //   return res.status('401').send({
-        //     error: "Email and password don't match."
-        //   })
-        // }
+        const result = await bcrypt.compare(req.body.password, user.password)
+        console.log(req.body.password + " " + result);
+        if (!result) {
+          return res.status('401').send({
+            error: "Email and password don't match."
+          })
+        }
 
         const token = jwt.sign(
           { user_id: user._id, user },
@@ -85,7 +86,7 @@ module.exports = {
         );
         user.token = token;
 
-        return res.status(200).send({user: {user_id: user._id, username: user.username, email: user.email},token})
+        return res.status(200).send({user: {user_id: user._id, username: user.username, email: user.email, result: result},token, data: result})
 
       } catch (err) {
         console.log(err)
