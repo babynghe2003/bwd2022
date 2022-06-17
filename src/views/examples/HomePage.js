@@ -35,14 +35,10 @@ import users from "../../datas/users.js";
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import posts from "../../datas/posts.js";
-import auth from "../../api-client/auth-helper"
-import { read } from "../api-post/api-post"
 
 const HomePage = (props) => {
   const [usersState, setUsers] = useState(users);
   const [questionsState, setQuestions] = useState(questions);
-
-  const [questionsDB, setQuestionsDB] = useState([])
 
   const [searchTexts, setSearchTexts] = useState("")
   const [hide,setHide] = useState([])
@@ -87,18 +83,18 @@ const HomePage = (props) => {
 
 
  // Read questions from database
- useEffect(() => {
-  const abortController = new AbortController()
-  const signal = AbortController.signal
+//  useEffect(() => {
+//   const abortController = new AbortController()
+//   const signal = AbortController.signal
 
-  read(signal).then((data) => {
-    setQuestionsDB(data)
-    console.log("Question State: " + questionsDB[0])
-  })
-  return function cleanup(){
-    abortController.abort()
-  }
-})
+//   read(signal).then((data) => {
+//     setQuestionsDB(data)
+//     console.log("Question State: " + questionsDB[0])
+//   })
+//   return function cleanup(){
+//     abortController.abort()
+//   }
+// })
 
 
   const getTagsName = (question) => {
