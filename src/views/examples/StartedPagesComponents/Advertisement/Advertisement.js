@@ -49,7 +49,7 @@ export default function Advertisement() {
       <h1 className='headingTextAds row'>Our Blogs </h1>
         <Row className='flex-wrap'>
         {
-          posts.map((post, index) => {
+          posts.slice(0,8).map((post, index) => {
             return (
               <Col xs="12" md="3" key={index}>
                   <Card className='my-3' style={{height: '500px', maxHeight: '400px'}}> 
@@ -57,7 +57,7 @@ export default function Advertisement() {
                       <h5 className='cardTitle text-truncate text-lg'>{post.title}</h5>
                     </CardHeader>
                     <CardBody>
-                      <img src={post.imgSrc} className='card-img'/>
+                      <img src={post.imgSrc} style={{objectFit:"cover", maxHeight:"200px"}} className='card-img'/>
                     </CardBody> 
                     <CardFooter>
                       <p className='cardFooterText'> {post.createdAt.yyyymmdd()}</p>

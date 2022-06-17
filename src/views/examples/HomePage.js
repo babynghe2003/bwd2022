@@ -136,16 +136,13 @@ const HomePage = (props) => {
               {question.vote}
               
             </td>
-            <th scope="row">
-              <Media className="align-items-center">
-                <Media>
-                  <span className="mb-0 text-sm" style={{ textOverflow: 'hidden' }}>
-                    <Link to={`/admin/question?questionID=${question.id}`} style={{ fontSize: '1.1rem' }} className="text-capitalize">
+            <th scope="row" style={{maxWidth:"300px"}}>
+              
+                  
+              <Link to={`/admin/question?questionID=${question.id}`} style={{ fontSize: '1.1rem',  overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} className="text-capitalize">
                       {question.title}
-                    </Link>
-                  </span>
-                </Media>
-              </Media>
+              </Link>
+
               <div>
                 <div className="float-left mt-3">
                 {getTagsName(question)}
