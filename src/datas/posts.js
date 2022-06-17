@@ -1,60 +1,289 @@
+import postTemp from "./postTemp";
 var posts = [
     {
         id: 1,
         userID: 1,
-        title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        title: 'SEX ED: AN INCLUSIVE TEENAGE GUIDE TO SEX AND RELATIONSHIPS',
+        content: postTemp,
         createdAt: new Date('2017-02-23T03:24:00'),
-        
+        imgSrc: "https://images.squarespace-cdn.com/content/v1/57dbe276f7e0abec416bc9bb/5d3b35e0-7f3c-48fb-bf76-bd8d4aa07803/Go+Fund+Me+%281%29.png?format=500w"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 2,
         userID: 1,
-        title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        title: 'YAP BLOG: BRIDGERTON: GENDER NORMS, FEMINISM AND THE PATRIARCHY',
+        content: postTemp,
         createdAt: new Date('2018-02-23T03:24:00'),
-        
+        imgSrc: "https://images.squarespace-cdn.com/content/v1/57dbe276f7e0abec416bc9bb/eb0f5062-0301-41d9-89be-f83110d3e6d5/bridgerton.jpg?format=500w"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 3,
         userID: 1,
-        title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        title: 'Bài học: Quấy rối, xâm hại và bạo lực tình dục',
+        content: postTemp,
         createdAt: new Date('2017-07-23T03:24:00'),
-        
+        imgSrc: "https://giaoducgioitinh.online/wp-content/uploads/wordpress-popular-posts/921-featured-70x70.jpg"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 4,
         userID: 1,
-        title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        title: 'Bài học: Sức khỏe sinh sản là gì?',
+        content: postTemp,
         createdAt: new Date('2019-02-23T03:24:00'),
-        
+        imgSrc: "https://giaoducgioitinh.online/wp-content/uploads/wordpress-popular-posts/859-featured-70x70.jpg"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 5,
         userID: 1,
-        title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        title: 'Why it’s vital that RSE responds to the lived experiences and realities of young people',
+        content: postTemp,
         createdAt: new Date('2017-04-23T03:24:00'),
-        
+        imgSrc: "https://www.sexeducationforum.org.uk/sites/default/files/styles/default/public/field/image/School%20of%20Sexuality%20Education%20blog.jpg?itok=6SnV5a8A"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 6,
         userID: 1,
         title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        content: postTemp,
         createdAt: new Date('20121-02-23T03:24:00'),
-        
+        imgSrc: "https://images.squarespace-cdn.com/content/v1/57dbe276f7e0abec416bc9bb/5d3b35e0-7f3c-48fb-bf76-bd8d4aa07803/Go+Fund+Me+%281%29.png?format=500w"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
     {
         id: 7,
         userID: 1,
         title: 'What does transgender mean and how can I challenge transphobia?',
-        content: 'Chào cả nhà, với mục đích là muốn cắt cáp quang do cũng ít nhu cầu dùng mạng nhiều, chủ yếu cho mấy camera và streaming Youtube Netflix nên mình định kiếm sim 4G rẻ để dùng kết hợp với Router wifi nhà đang có sẵn chạy OpenWRT.Setup hiện mình đang dùng:1. Router Xiaomi R3G chạy OpenWRT có cổng USBMình không chọn các thiết bị router chuyên 4G vì thường nó bắt 4G tốt hơn mình biết, nhưng thiếu nhiều chức năng như bên OpenWRT là 1, độ phủ sóng wifi kém là 2 nên mình không chọn đường này2. Accesspoint AX58U ASUS, con này mình mua 3 củ hơn cho nó làm Acesspoint thì hơi sang quá, chưa tìm được con nào phát wifi tốt hơn đội ASUS nên tạm thời để nó làm AP3. Mình định rút gọn router + AP làm 1 thì có nghía qua con GL.inet AX1800 Flint, nhưng hiện tại official firmware của nó chưa stable và chưa thật sự support OpenWRT 21.0.x nên mình cũng đang đợi em nó chín mùi rồi rút gọn lại combo mạng4. Về sim thì mình lúc đầu có ngó sim VPB51 của Mobifone do tưởng unlimited data, nghe gọi được, làm multisim được. Lúc đầu tưởng bở 100k/tháng sim nghe gọi được, làm thêm multisim 75k/3 sim mỗi tháng nữa là 175k/4 sim unlimited data 4G. Nhưng đời không như là mơ. Sim VPB51 khó đăng kí chính chủ, không nghe gọi, lại càng khó làm multisim. Không biết bạn nào có làm multisim của sim này chưa cho biết ý kiến vớiOption thứ 2 của mình là Reddi với gói thác đổ, xài hạ tầng VNPT. 100k/tháng unlimited data 4G, riêng nếu đóng lượt 3 tháng thì được tặng gọi nội ngoại mạng nên nếu xài 4G ổn cho wifi ở nhà thì chuyển mạng giữ số sang hết Reddi cho gia đình để tiết kiệm cước 4G luônHiện tại mình dùng Combo Home Kết Nối của VNPT, cá nhân mình thấy ổn, nhưng bị cái 4G 30GB chia cho cả 5 thành viên trong nhà xài hơi bị thiếu hụt, 1 tháng phải nạp thêm 70-100k data nữa mới xài đủ. Lại không dám xài 4G nhiều với sim này, chuyển qua unlimited data thì thoải mái hơn nhiềuChốt lại, anh em đánh giá setup trên như thế nào? Có ổn không? Nếu sắm USB 4G cho setup trên thì nên mua loại nào? Thị trường giờ thượng vàng hạ cám lắm nên cũng khó biết được loại nào tốt.',
+        content: postTemp,
         createdAt: new Date('2022-02-23T03:24:00'),
-        
+        imgSrc: "https://images.squarespace-cdn.com/content/v1/57dbe276f7e0abec416bc9bb/5d3b35e0-7f3c-48fb-bf76-bd8d4aa07803/Go+Fund+Me+%281%29.png?format=500w"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
     },
+    {
+        id: 8,
+        userID: 1,
+        title: 'Sex Ed in Schools: The Arguments For And Against?',
+        content: postTemp,
+        createdAt: new Date('2022-02-23T03:24:00'),
+        imgSrc: "https://blog.4tests.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-30-at-11.30.43-PM.png"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
+    },
+    {
+        id: 9,
+        userID: 1,
+        title: 'Support for Comprehensive Sexuality Education ',
+        content: postTemp,
+        createdAt: new Date('2022-02-23T03:24:00'),
+        imgSrc: "https://i.ytimg.com/vi/uC9UIiNfzTo/maxresdefault.jpg"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
+    },{
+        id: 10,
+        userID: 1,
+        title: 'The Different Approaches to Sexuality Education',
+        content: postTemp,
+        createdAt: new Date('2022-02-23T03:24:00'),
+        imgSrc: "https://images.routledge.com/common/jackets/crclarge/978113880/9781138800700.jpg"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
+    },{
+        id: 11,
+        userID: 1,
+        title: 'History of sexuality education in the United States',
+        content: postTemp,
+        createdAt: new Date('2022-02-23T03:24:00'),
+        imgSrc: "https://images.squarespace-cdn.com/content/v1/55a550a8e4b0c83122fc74f3/1623183089746-M68721B6OJXY0AOUR21L/The+History+of+Sexuality+Education+in+the+United+States.png?format=1500w"
+        ,answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -8
+            },
+        ],
+    }
 
 ];
 
