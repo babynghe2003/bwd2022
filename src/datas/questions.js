@@ -277,6 +277,56 @@ var questions = [
             },
         ],
         tags: ['health','service']
+    },{
+        id: 14,
+        userID: 1,
+        title: 'I didn’t have much sex education when I was young and it didn’t affect me. Isn’t it best to let kids pick up what they need to knowin their own time?',
+        description: 'I didn’t have much sex education when I was young and it didn’t affect me. Isn’t it best to let kids pick up what they need to knowin their own time?',
+        vote: 1,
+        answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -5
+            },
+        ],
+        tags: ['health','service']
+    },{
+        id: 15,
+        userID: 1,
+        title: 'Why can’t schools just teach their students not to have sex? Schools should promote abstinence',
+        description: 'Why can’t schools just teach their students not to have sex? Schools should promote abstinence',
+        vote: 1,
+        answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -5
+            },
+        ],
+        tags: ['health','service']
     },
 
 ]
