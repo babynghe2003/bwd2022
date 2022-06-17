@@ -176,6 +176,107 @@ var questions = [
             },
         ],
         tags: ['health','service']
+    },{
+        id: 9,
+        userID: 1,
+        title: 'I heard that teaching students about sex only encourages them to have sex. Is this true ?',
+        description: 'I heard that teaching students about sex only encourages them to have sex. Is this true ?',
+        vote: 6,
+        answers: [
+            {
+                userID: 2, content: 'No. Sexuality education is not narrowly focused on how to have sex. It includes a focus on values, decision-making, biology, emotions, gender identity, and sexual feelings. It also presents abstinence,delaying fi rst sex, limiting the number of partners and safer sex.',
+                vote: 20
+            }
+        ],
+        tags: ['sex','service']
+    },{
+        id: 10,
+        userID: 1,
+        title: 'Does teaching about sex in schools take it out of the home?',
+        description: 'Does teaching about sex in schools take it out of the home?',
+        vote: 6,
+        answers: [
+            {
+                userID: 2, content: 'Studies have found the opposite is true. Sexuality education programs result in increased parent-child communication about sexuality',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -5
+            },
+        ],
+        tags: ['education','sexuality']
+    },{
+        id: 11,
+        userID: 1,
+        title: 'Why can’t schools just teach their students not to have sex? Schools should promote abstinence',
+        description: 'Why can’t schools just teach their students not to have sex? Schools should promote abstinence?',
+        vote: 6,
+        answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -5
+            },
+        ],
+        tags: ['education']
+    },{
+        id: 12,
+        userID: 1,
+        title: 'Isn’t it true that condoms are not very effective in preventing pregnancy and sexually transmissible infections, like AIDS and chlamydia?',
+        description: 'Isn’t it true that condoms are not very effective in preventing pregnancy and sexually transmissible infections, like AIDS and chlamydia?',
+        vote: 6,
+        answers: [
+            {
+                userID: 2, content: 'Repeated studies show condoms used consistently and correctly offer a high degree of protection against pregnancy and sexually transmissible infections (STIs). Using a condom is 10,000 times safer than not using one. The most common cause for failure is improper or inconsistent use. That is why including condom instruction in sexuality education is so important',
+                vote: 5
+            }
+        ],
+        tags: ['health','sexuality']
+    },{
+        id: 13,
+        userID: 1,
+        title: 'Isn’t it true that if you talk to kids about sex they will experiment?',
+        description: 'Isn’t it true that if you talk to kids about sex they will experiment?',
+        vote: 6,
+        answers: [
+            {
+                userID: 2, content: 'You can find your nearest sexual health services',
+                vote: 5
+            },
+            {
+                userID: 3, content: 'You can buy a pregnancy test from pharmacies or some supermarkets, which you can do yourself at home.',
+                vote: 3
+            },            
+            {
+                userID: 4, content: 'You can find answers on the internet, but you need to be very careful about what you search for. You can also find answers on the internet, but you need to be very careful about what you search for.',
+                vote: 1
+            },
+            {
+                userID: 4, content: 'You can find answers on the internet',
+                vote: -5
+            },
+        ],
+        tags: ['health','service']
     },
 
 ]
