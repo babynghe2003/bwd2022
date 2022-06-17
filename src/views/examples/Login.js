@@ -25,7 +25,7 @@ const Login = () => {
     username: '',
     password: ''
   })
-
+  
   const handleChange = name => event => {
     console.log(name + " " + event)
     setValues({...values, [name]: event.target.value})
@@ -34,7 +34,6 @@ const Login = () => {
   const [error, setError] = useState("");
   let history = useHistory();
 
- 
   const checkLogin = () => {
     const user = {
       email: values.email || undefined,
@@ -44,7 +43,12 @@ const Login = () => {
     signin(user).then((data) => {
       auth.authenticate(data, () => {
         setValues({...values})
-        history.push("/admin/icons");
+        if( data.user.result === true ) {
+          window.location.href = "/admin/index"
+        } else { 
+          console.log("err")
+        }
+        // history.push("/admin/icons");
       })
     })
   }

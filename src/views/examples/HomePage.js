@@ -33,12 +33,16 @@ import Header from "components/Headers/Header.js";
 import questions from "../../datas/questions.js";
 import users from "../../datas/users.js";
 import { useLocation, Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import posts from "../../datas/posts.js";
+import auth from "../../api-client/auth-helper"
+import { read } from "../api-post/api-post"
 
 const HomePage = (props) => {
   const [usersState, setUsers] = useState(users);
   const [questionsState, setQuestions] = useState(questions);
+
+  const [questionsDB, setQuestionsDB] = useState([])
 
   const [searchTexts, setSearchTexts] = useState("")
   const [hide,setHide] = useState([])
@@ -81,6 +85,22 @@ const HomePage = (props) => {
   console.log(userCurrent);
   console.log(tagCurrent);
 
+
+ // Read questions from database
+ useEffect(() => {
+  const abortController = new AbortController()
+  const signal = AbortController.signal
+
+  read(signal).then((data) => {
+    setQuestionsDB(data)
+    console.log("Question State: " + questionsDB[0])
+  })
+  return function cleanup(){
+    abortController.abort()
+  }
+})
+
+
   const getTagsName = (question) => {
     return question.tags.map((tag, index) => {
       return (
@@ -95,6 +115,7 @@ const HomePage = (props) => {
     // const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
 
     const questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))))
+    // const questionTemp = questions.filter((question) => (question.title !== ''))
     return questionTemp.map((question, index) => {
       return (
           <tr key={index}> 
@@ -210,6 +231,9 @@ const HomePage = (props) => {
 
     })
   };
+
+
+
   return (
     <>
       <Header />

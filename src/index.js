@@ -21,7 +21,6 @@ ReactDOM.render(
         return auth.isAuthenticated() ? <AdminLayout {...props} /> : <Redirect  to={'/auth/login'} />
       }} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-      <Route path="/home" render={StartedPage}/>
       <Redirect from="*" to="/home" />
       
     </Switch>
