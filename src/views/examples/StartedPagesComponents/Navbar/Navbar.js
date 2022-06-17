@@ -6,10 +6,10 @@ export default function Navbar() {
     <div className='startedNavbar'>
       <div className='containerNavbar'>
         <div className='servicesNavbar'>
-          <a href="https://pttrns.outseta.com/auth?widgetMode=register&amp;planUid=496rkZ9X&amp;planPaymentTerm=month&amp;skipPlanOptions=true#o-anonymous" className="btn btn-primary btn-large w-inline-block">
-              <div>Start 3-day free trial</div>
+          <a href="/auth/register" className="btn btn-primary btn-large text-lg w-inline-block">
+              <div>Register</div>
           </a>
-          <a href="/auth/login" className="btn btn-default btn-large w-inline-block">
+          <a href="/auth/login" className="btn btn-default btn-large text-lg w-inline-block">
             <div>Log in</div>
           </a>
         </div>

@@ -63,12 +63,24 @@ const HomePage = (props) => {
     }
   }
 
-  const handlerHide = (id) => {
+  const handlerHide = (e,id) => {
+    e.preventDefault();
     console.log(id);
-
-    setHide([...hide, id])
+    
     console.log(hide);
+    if (window.confirm('Are you sure you wantn to hide this question?')) {
+      setHide([...hide, id])
+    } 
+  }
 
+  const handlerReport = (e,id) => {
+    e.preventDefault();
+    console.log(id);
+    
+    console.log(hide);
+    if (window.confirm('Are you sure you wantn to report this question?')) {
+      setHide([...hide, id])
+    } 
   }
 
   const location = useLocation();
@@ -108,10 +120,9 @@ const HomePage = (props) => {
   }
   const getQuestion = (questions) => {
 
-    // const questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
-
-    const questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))))
-    // const questionTemp = questions.filter((question) => (question.title !== ''))
+    var questionTemp = questions.filter((question) => ((userCurrent && userCurrent.id === question.userID || tagCurrent && question.tags.find(tag => tag === tagCurrent) || (!userCurrent && !tagCurrent)) && !hide.includes(question.id)));
+    if(searchTexts.length>0)
+    questionTemp = questions.filter((question) => ((question.title.toLowerCase().includes(searchTexts))  && !hide.includes(question.id)))
     return questionTemp.map((question, index) => {
       return (
           <tr key={index}> 
@@ -162,13 +173,13 @@ const HomePage = (props) => {
                 <DropdownMenu className="dropdown-menu-arrow" right>
                   <DropdownItem
                     href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    onClick={(e) => handlerReport(e,question.id)}
                   >
                     Report
                   </DropdownItem>
                   <DropdownItem
                     href="#pablo"
-                    onClick={(e) => handlerHide(question.id)}
+                    onClick={(e) => handlerHide(e,question.id)}
                   >
                     Hide
                   </DropdownItem>
@@ -195,21 +206,21 @@ const HomePage = (props) => {
   const getPosts = (posts) => {
     return posts.map((post, index) => {
       return (
-        <div key={index}>
-          <div className="avatar float-left mr-1">
+        <div key={index} className="flex-row py-1" style={{borderBottom: '1px solid rgba(0,0,0,0.1'}}>
+          <div className="float-left mr-3">
             <img
               alt="..."
-              className="rounded-circle"
               src={
-                require("../../assets/img/theme/abc.webp")
-                  .default
+                post.imgSrc
               }
+              width="150px"
+              height="150px"
             />
 
           </div>
-          <div>
-            <span className="mb-0 text-sm" style={{ fontWeight: 600 }}>
-              <Link to={`/admin/post?postID=${post.id}`} >
+          <div className="">
+            <span className="mb-0 text-lg" style={{ fontWeight: 600 }}>
+              <Link to={`/admin/postPage?postPageID=${post.id}`} >
                 {post.title}
               </Link>
             </span>
@@ -286,7 +297,7 @@ const HomePage = (props) => {
               <CardHeader className="border-0">
                 <h3 className="mb-0">Lastest Post</h3>
               </CardHeader>
-              <CardBody>
+              <CardBody className="row">
                 {getPosts(posts)}
               </CardBody>
             </Card>

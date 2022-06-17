@@ -1,8 +1,11 @@
 import React from 'react'
+
 import './home.css'
 
 export default function Home(props) {
     const {mainImg,logo} = props
+
+
   return (
     <div className='home'>
         <img src={mainImg.imgSrc}  alt="" className="hero-illustration"></img>

@@ -68,6 +68,7 @@ const Post = () => {
       },
       data: post
     }).then((data) => {
+      alert("You have successfully posted a question!")
       return data
     })
     

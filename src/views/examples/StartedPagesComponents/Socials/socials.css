@@ -1,7 +1,9 @@
 .socials {
-    margin-top: 450px;
-    height: 70vh;
+    padding-top: 200px;
+    height: 100vh;
     width: 100%;
+    background-attachment: fixed;
+    background-size: auto;
 }
 
 /* Wrapper Socials */
@@ -23,15 +25,19 @@
     font-weight: 600;
     text-align: center;
     display: contents;
+    font-family: proxima-nova, sans-serif;
+
 }
 
 /* Heading Title Socials Content */
 .headingTitleSocials {
     margin-bottom: 80px;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 300;
     text-align: center;
-    color: black;
+    color: white;
+    font-family: 'Paytone One', sans-serif;
+
 }
 
 /* Socials' Brand Container */

@@ -56,7 +56,7 @@ const AdminNavbar = () => {
                 </Col>
               </Row>
             </div>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto te" navbar>
               <NavItem>
                 <NavLink className="nav-link-icon" to="/home" tag={Link}>
                   <i className="ni ni-planet" />
@@ -77,16 +77,6 @@ const AdminNavbar = () => {
                 <NavLink className="nav-link-icon" to="/auth/login" tag={Link}>
                   <i className="ni ni-key-25" />
                   <span className="nav-link-inner--text">Login</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  to="/admin/user-profile"
-                  tag={Link}
-                >
-                  <i className="ni ni-single-02" />
-                  <span className="nav-link-inner--text">Profile</span>
                 </NavLink>
               </NavItem>
             </Nav>
