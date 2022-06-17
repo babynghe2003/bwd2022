@@ -6,13 +6,10 @@ const tagSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        minlength: 3, 
-        maxlength: 20,
         trim: true,
     },
     description: {
         type: String,
-        required: true,
         minlength: 3,
         maxlength: 255,
         trim: true,

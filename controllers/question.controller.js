@@ -26,24 +26,28 @@ module.exports = {
         try {
             if(req.body.title && req.body.content && req.body.tags) {
                 const us = await user.findById(req.user.user_id);            
-                let reqtags = req.body.tag;
+                let reqtags = req.body.tags;
                 let tg = [];
-                reqtags.map(async (tag) => {
-                    let tagg = await tag.findById(tag);
-                    if (!tagg) {
-                        tagg = await tag.create({
-                            name: tag
-                        });
-                        tg.push(tagg);
+                for(let i = 0; i < reqtags.length; i++) {
+                    let tagg = await tag.findOne({ tag: reqtags[i] });
+                    if(tagg) {
+                        tg.push(tagg._id);
                     }
-                });            
+                    else {
+                        let newtag = new tag({ tag: reqtags[i] });
+                        await newtag.save();
+                        tg.push(newtag._id);
+                    }
+                }
+                console.log(tg); 
+                console.log("This is TG: " + tg)     
                 const qs = new question({
                     author: us,
                     title: req.body.title,
                     content: req.body.content,
-                    tag: tg
+                    tags: tg
                 });
-                qs.save();
+                await qs.save();
                 res.status(200).json(qs);
             }else{
                 res.status(400).json({ message: "title, content and tags are required" });
