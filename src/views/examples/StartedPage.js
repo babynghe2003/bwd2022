@@ -12,6 +12,7 @@ const StartedPage = (props) => {
    
   return (
     <>
+     
       <div>
         <div>
           <Navbar/>

@@ -43,11 +43,18 @@ const Login = () => {
     signin(user).then((data) => {
       auth.authenticate(data, () => {
         setValues({...values})
-        if( data.user.result === true ) {
+        try {
+          if( data.user.result) {
           window.location.href = "/admin/index"
-        } else { 
-          console.log("err")
+          } else { 
+            alert("Login failed")
+            console.log("err")
+          }
+        } catch (error) {
+          alert("Login failed")
+          
         }
+        
         // history.push("/admin/icons");
       })
     })
@@ -150,26 +157,7 @@ const Login = () => {
             </Form>
           </CardBody>
         </Card>
-        <Row className="mt-3">
-          <Col xs="6">
-            <a
-              className="text-light"
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
-            >
-              <small>Forgot password?</small>
-            </a>
-          </Col>
-          <Col className="text-right" xs="6">
-            <a
-              className="text-light"
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
-            >
-              <small>Create new account</small>
-            </a>
-          </Col>
-        </Row>
+        
       </Col>
     </>
   );

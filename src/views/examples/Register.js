@@ -48,6 +48,7 @@ const Register = () => {
     }
     console.log(user)
     create(user).then((data) => {
+      alert("Successfully registered")
       setValues({...data})
     })
   }

@@ -16,11 +16,11 @@ import auth from "./api-client/auth-helper"
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/home" render={StartedPage}/>
       <Route path="/admin" render={(props) => {
         return auth.isAuthenticated() ? <AdminLayout {...props} /> : <Redirect  to={'/auth/login'} />
       }} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+      <Route path="/home" render={(props) => <StartedPage/>}/>
       <Redirect from="*" to="/home" />
       
     </Switch>
