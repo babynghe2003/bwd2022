@@ -62,11 +62,11 @@ const Login = () => {
 
   return (
     <>
-      <Col lg="5" md="7">
+      <Col lg="4" md="7">
         <Card className="bg-secondary shadow border-0">
           <CardHeader className="bg-transparent pb-5">
             <div className="text-muted text-center mt-2 mb-3">
-              <small>Sign in with</small>a
+              <small>Sign in with</small>
             </div>
             <div className="btn-wrapper text-center">
               <Button
